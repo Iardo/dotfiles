@@ -1,0 +1,4 @@
+asset:
+  name: 'noto-color-emoji'
+  package: 'fonts-noto-color-emoji'
+  provider: 'apt'

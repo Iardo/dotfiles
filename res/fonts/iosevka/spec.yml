@@ -1,0 +1,4 @@
+asset:
+  name: 'iosevka'
+  uri: 'https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka'
+  provider: 'github'

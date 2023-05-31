@@ -1,0 +1,12 @@
+# ignore these folders:
+
+
+# ignore these files:
+.ds_store
+
+# --------------------
+
+# include these folders:
+!/res/configs/regolith/i3/config.d.defaults
+
+# include these files:

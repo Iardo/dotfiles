@@ -1,0 +1,4 @@
+asset:
+  name: 'jetbrains-mono'
+  uri: 'https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono'
+  provider: 'github'

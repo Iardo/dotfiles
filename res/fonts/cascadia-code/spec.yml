@@ -1,0 +1,4 @@
+asset:
+  name: 'cascadia-code'
+  uri: 'https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode'
+  provider: 'github'
