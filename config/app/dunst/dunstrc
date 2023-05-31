@@ -1,0 +1,38 @@
+# Global
+# --------------------
+[global]
+    font = Iosevka Custom 11
+    width = 350
+    origin = top-right
+    offset = (10, 50)
+    gap_size = 10
+    history_length = 200
+    frame_width = 2
+    frame_color = "#b8ff3d"
+    highlight = "#b8ff3d"
+    corner_radius = 0
+    separator_color = frame
+    format = "<b>%s</b>\n%b"
+    icon_position = left
+    max_icon_size = 48
+
+
+# Urgency
+# --------------------
+[urgency_low]
+    background = "#000000"
+    foreground = "#999999"
+    timeout = 10
+    frame_color = "#4c4c4c"
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#b8ff3d"
+    timeout = 10
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#cc241d"
+    timeout = 0

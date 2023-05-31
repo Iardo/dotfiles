@@ -1,0 +1,36 @@
+# Completion
+# --------------------
+set completion-ignore-case on
+set completion-map-case on
+set colored-completion-prefix on
+set colored-stats on
+set menu-complete-display-prefix on
+set page-completions off
+set show-all-if-ambiguous on
+
+
+# Display
+# --------------------
+set echo-control-characters off
+set mark-symlinked-directories on
+set match-hidden-files off
+set visible-stats on
+
+
+# Terminal
+# --------------------
+set bind-tty-special-chars off
+
+
+# Keybinds
+# --------------------
+# Ctrl-Left and Ctrl-Right: move by word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
+# Ctrl-Backspace: delete previous word
+# https://askubuntu.com/a/701933
+"\C-H": shell-backward-kill-word
+
+# Ctrl-Delete: delete next word
+"\e[3;5~": shell-kill-word

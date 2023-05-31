@@ -1,0 +1,209 @@
+"Build tools":
+  - CMake
+  - Dockerfile
+  - Gradle
+  - Makefile
+  - Starlark
+
+"Configuration and data":
+  - .env
+  - .gitignore
+  - CSV
+  - CUE
+  - Dhall
+  - INI
+  - JSON
+  - JSON Lines
+  - JSON5
+  - JSONC
+  - Jsonnet
+  - nginx conf
+  - Nix
+  - OpenAPI
+  - Properties
+  - Protocol Buffers
+  - systemd unit
+  - TOML
+  - XML
+  - YAML
+
+"Data query":
+  - Datalog
+  - GraphQL
+  - Gremlin
+  - jq
+  - KQL
+  - MDX
+  - PL/pgSQL
+  - PL/SQL
+  - PromQL
+  - SPARQL
+  - SQL
+  - XPath
+
+"Esoteric":
+  - Befunge
+  - BQN
+  - Brainfuck
+  - Chef
+  - Cow
+  - "FALSE"
+  - FRACTRAN
+  - GolfScript
+  - Haskell-like Unlambda
+  - HQ9+
+  - INTERCAL
+  - J
+  - Jelly
+  - LOLCODE
+  - Malbolge
+  - Piet
+  - Rockstar
+  - Shakespeare
+  - Whitespace
+
+"Hardware and low level":
+  - Assembly
+  - Devicetree
+  - LLVM IR
+  - SystemVerilog
+  - Verilog
+  - VHDL
+  - WebAssembly
+
+"Markup and documentation":
+  - AsciiDoc
+  - Astro
+  - Blade
+  - CSS
+  - ERB
+  - Graphviz DOT
+  - Handlebars
+  - HTML
+  - Jinja
+  - LaTeX
+  - Less
+  - Liquid
+  - Markdown
+  - Mermaid
+  - Org mode
+  - PlantUML
+  - Pug
+  - Razor
+  - reStructuredText
+  - Sass
+  - SCSS
+  - Stylus
+  - Svelte
+  - SVG
+  - Twig
+  - Typst
+  - Vue
+
+"Programming: functional":
+  - Bend
+  - Clojure
+  - Elixir
+  - Elm
+  - Emacs Lisp
+  - Erlang
+  - Gleam
+  - Haskell
+  - Koka
+  - Lisp
+  - OCaml
+  - PureScript
+  - Racket
+  - ReScript
+  - Roc
+  - Scheme
+  - Standard ML
+  - Unison
+
+"Programming: game development and fantasy consoles":
+  - CHIP-8 (Octo)
+  - Fennel
+  - Godot
+  - Uxntal
+  - Wren
+
+"Programming: general purpose":
+  - C#
+  - COBOL
+  - Crystal
+  - Dart
+  - Forth
+  - Fortran
+  - Groovy
+  - Hack
+  - Haxe
+  - Java
+  - JavaScript
+  - JSX y TSX
+  - Kotlin
+  - Mojo
+  - Pascal
+  - PHP
+  - Prolog
+  - Python
+  - Raku
+  - Ruby
+  - Scala
+  - Swift
+  - TypeScript
+  - Visual Basic
+
+"Programming: scientific and academic":
+  - APL
+  - Coq
+  - Julia
+  - Lean
+  - Octave
+  - R
+  - SAS
+  - Sligh
+  - Stata
+  - Wolfram
+  - Whiley
+
+"Programming: scripting and shells":
+  - AppleScript
+  - AutoHotkey
+  - Awk
+  - Bash
+  - Batch (cmd)
+  - Fish
+  - Lua
+  - Luau
+  - Nushell
+  - PowerShell
+  - Vim script
+  - Zsh
+
+"Programming: smart contracts":
+  - Move
+  - Vyper
+
+"Programming: systems":
+  - Ada
+  - C
+  - C++
+  - D
+  - Go
+  - Nim
+  - Odin
+  - Rust
+  - V
+  - Vala
+  - Zig
+
+"Shaders and GPU":
+  - CUDA
+  - GLSL
+  - HLSL
+  - ShaderLab
+  - Slang
+  - SPIR-V
+  - WebGL
+  - WebGPU
+  - WGSL

@@ -1,0 +1,116 @@
+-- Autoformat
+-------------------
+--
+
+return {
+  'stevearc/conform.nvim',
+  event = { 'BufWritePre' },
+  cmd = { 'ConformInfo' },
+  keys = {
+    {
+      '<leader>f',
+      function()
+        require('conform').format { async = true, lsp_format = 'fallback' }
+      end,
+      mode = '',
+      desc = '[F]ormat buffer',
+    },
+  },
+  opts = {
+    notify_on_error = false,
+    format_on_save = function(bufnr)
+      -- Only these languages format on save, every other one formats on demand with <leader>f
+      local filetypes_on_save = {
+        c = 'never',
+        cpp = 'never',
+        javascript = 'fallback',
+        javascriptreact = 'fallback',
+        lua = 'fallback',
+        python = 'fallback',
+        typescript = 'fallback',
+        typescriptreact = 'fallback',
+      }
+      local lsp_format_opt = filetypes_on_save[vim.bo[bufnr].filetype]
+      if lsp_format_opt == nil then
+        return nil
+      end
+      return {
+        timeout_ms = 500,
+        lsp_format = lsp_format_opt,
+      }
+    end,
+    formatters_by_ft = {
+      asm = { 'asmfmt' },
+      c = { 'clang-format' },
+      cmake = { 'gersemi' },
+      cpp = { 'clang-format' },
+      crystal = { 'crystal' },
+      cs = { 'csharpier' },
+      css = { 'biome' },
+      cuda = { 'clang-format' },
+      dart = { 'dart_format' },
+      dockerfile = { 'dockerfmt' },
+      elixir = { 'mix' },
+      elm = { 'elm_format' },
+      erlang = { 'erlfmt' },
+      fennel = { 'fnlfmt' },
+      fortran = { 'fprettify' },
+      gdscript = { 'gdformat' },
+      gleam = { 'gleam' },
+      glsl = { 'clang-format' },
+      go = { 'gofumpt' },
+      graphql = { 'prettier' },
+      handlebars = { 'djlint' },
+      haskell = { 'fourmolu' },
+      hlsl = { 'clang-format' },
+      javascript = { 'biome', 'eslint_d', stop_after_first = true },
+      javascriptreact = { 'biome', 'eslint_d', stop_after_first = true },
+      jinja = { 'djlint' },
+      json = { 'biome', 'jq', stop_after_first = true },
+      jsonc = { 'biome' },
+      jsonl = { 'jq' },
+      kotlin = { 'ktlint' },
+      less = { 'prettier' },
+      lua = { 'stylua' },
+      luau = { 'stylua' },
+      make = { 'bake' },
+      markdown = { 'mdformat' },
+      mdx = { 'prettier' },
+      mojo = { 'mojo_format' },
+      nginx = { 'nginxfmt' },
+      nim = { 'nimpretty' },
+      nix = { 'nixfmt' },
+      ocaml = { 'ocamlformat' },
+      odin = { 'odinfmt' },
+      pgsql = { 'pg_format' },
+      php = { 'php_cs_fixer' },
+      plsql = { 'sql_formatter' },
+      proto = { 'buf' },
+      python = { 'ruff_format', 'autopep8', stop_after_first = true },
+      racket = { 'racketfmt' },
+      rescript = { 'rescript-format' },
+      roc = { 'roc' },
+      ruby = { 'rubocop' },
+      rust = { 'rustfmt' },
+      scss = { 'prettier' },
+      sh = { 'shfmt' },
+      sml = { 'smlfmt' },
+      sql = { 'sql_formatter' },
+      svg = { 'xmlformatter' },
+      swift = { 'swiftformat' },
+      systemverilog = { 'verible' },
+      toml = { 'taplo' },
+      twig = { 'djlint' },
+      typescript = { 'biome', 'eslint_d', stop_after_first = true },
+      typescriptreact = { 'biome', 'eslint_d', stop_after_first = true },
+      typst = { 'typstyle' },
+      verilog = { 'verible' },
+      vhdl = { 'vsg' },
+      vue = { 'prettier' },
+      xml = { 'xmlformatter' },
+      yaml = { 'prettier' },
+      zig = { 'zigfmt' },
+      zsh = { 'beautysh' },
+    },
+  },
+}

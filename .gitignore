@@ -1,0 +1,11 @@
+# include folders:
+# ignored folders:
+.vs
+
+# --------------------
+# include files:
+!.gitkeep
+
+# ignored files:
+.ds_store
+.uuid

@@ -1,0 +1,40 @@
+# include folders:
+# ignored folders:
+/.apdisk
+/.AppleDB
+/.AppleDesktop
+/.Idea/*
+/.llms/plan
+/.llms/specs
+/.vs
+/.vscode/*
+/Network Trash Folder
+/Temporary Items
+
+
+# --------------------
+# include files:
+!.gitkeep
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# ignored files:
+._*
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.development.*
+.DocumentRevisions-V100
+.ds_store
+.env
+.fseventsd
+.history
+.llms/env.md
+.local.*
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.uuid
+.VolumeIcon.icns

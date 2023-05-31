@@ -1,0 +1,298 @@
+# General
+# --------------------
+general:
+  focus_follows_cursor: false
+  toggle_workspace_on_refocus: false
+  hide_method: 'cloak'
+  cursor_jump:
+    enabled: false
+    trigger: 'monitor_focus'
+  startup_commands: ['focus --workspace 2']
+  config_reload_commands: []
+  show_all_in_taskbar: false
+
+# Gaps
+# --------------------
+gaps:
+  scale_with_dpi: true
+  inner_gap: '2px'
+  outer_gap:
+    top: '2px'
+    right: '2px'
+    bottom: '2px'
+    left: '2px'
+
+# Window effects
+# --------------------
+window_effects:
+  focused_window:
+    border:
+      enabled: false
+      color: '#CCCCCC'
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: 'square'
+    transparency:
+      enabled: false
+      opacity: '95%'
+  other_windows:
+    border:
+      enabled: true
+      color: '#CCCCCC'
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: 'square'
+    transparency:
+      enabled: false
+      opacity: '0%'
+
+# Window behavior
+# --------------------
+window_behavior:
+  initial_state: 'tiling'
+  state_defaults:
+    floating:
+      centered: true
+      shown_on_top: false
+    fullscreen:
+      maximized: false
+      shown_on_top: false
+
+# Workspaces
+# --------------------
+workspaces:
+  - name: '1'
+    display_name: 'media'
+    keep_alive: true
+  - name: '2'
+    display_name: 'main'
+    keep_alive: true
+  - name: '3'
+    display_name: 'code'
+    keep_alive: true
+  - name: '4'
+    display_name: 'debug'
+    keep_alive: true
+  - name: '5'
+    display_name: 'chat'
+    keep_alive: true
+
+# Window rules
+# --------------------
+window_rules:
+  - commands: ['move --workspace 1', 'set-fullscreen']
+    match:
+      - window_process: { equals: 'mpc-hc64' }                        # Media Player Classic
+        window_class:   { equals: 'MediaPlayerClassicW' }             # Media Player Classic
+      - window_process: { regex: 'mpv' }                              # MPV
+  - commands: ['move --workspace 2']
+    match:
+      - window_process: { equals: 'chrome' }                          # Chrome
+        window_class:   { regex: 'Chrome_WidgetWin_1' }               # Chrome
+      - window_process: { regex: 'msedge' }                           # Edge
+      - window_process: { regex: 'opera' }                            # Opera
+  - commands: ['move --workspace 3']
+    match:
+      - window_process: { equals: 'lite-xl' }                         # Lite-XL
+        window_class:   { equals: 'SDL_app' }                         # Lite-XL
+      - window_process: { equals: 'devenv' }                          # Visual Studio
+        window_class:   { regex: 'HwndWrapper\[DefaultDomain.*?\]' }  # Visual Studio
+      - window_process: { equals: 'Code' }                            # VSCode
+        window_class:   { equals: 'Chrome_WidgetWin_1' }              # VSCode
+      - window_process: { regex: 'wezterm-gui' }                      # Wezterm
+        window_class:   { regex: 'org.wezfurlong.wezterm' }           # Wezterm
+  - commands: ['set-tiling']
+    match:
+      - window_process: { equals: 'devenv' }                          # Visual Studio
+        window_class:   { regex: 'HwndWrapper\[DefaultDomain.*?\]' }  # Visual Studio
+  - commands: ['ignore']
+    match:
+      - window_process: { equals: 'fdm' }                             # Free Download Manager
+        window_class:   { regex: 'Qt682QWindowIcon' }                 # Free Download Manager
+      - window_process: { equals: 'Lively' }                          # Lively
+        window_class:   { regex: 'HwndWrapper' }                      # Lively
+      - window_title:   { regex: '[Pp]icture.in.[Pp]icture' }         # Picture-in-Picture
+        window_class:   { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
+      - window_process: { equals: 'PowerToys' }                       # PowerToys
+        window_class:   { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: 'PowerToys' }                       # PowerToys
+        window_title:   { regex: '.*? - Peek' }                       # PowerToys
+      - window_process: { equals: 'QuickLook' }                       # Quick Look
+        window_class:   { regex: 'HwndWrapper\[QuickLook.*?\]' }      # Quick Look
+      - window_process: { regex: 'SnippingTool' }                     # Snipping Tool
+        window_class:   { regex: 'Microsoft-Windows-SnipperToolbar' } # Snipping Tool
+      - window_process: { equals: 'SystemSettings' }                  # System Config
+      - window_process: { regex: 'ApplicationFrameHost|explorer' }    # System Config
+        window_class:   { regex: 'ApplicationFrameWindow' }           # System Config
+      - window_process: { regex: '[Tt]askmgr' }                       # Task Manager
+        window_class:   { regex: 'TaskManagerWindow' }                # Task Manager
+      - window_process: { equals: 'Ueli' }                            # Ueli
+        window_class:   { equals: 'Chrome_WidgetWin_1' }              # Ueli
+      - window_process: { equals: 'yasb' }                            # Yasb
+      - window_process: { equals: 'zebar' }                           # Zebar
+
+# Binding modes
+# --------------------
+binding_modes:
+  - name: 'resize'
+    keybindings:
+      - commands: ['resize --width -2%']
+        bindings: ['h', 'left']
+      - commands: ['resize --width +2%']
+        bindings: ['l', 'right']
+      - commands: ['resize --height +2%']
+        bindings: ['k', 'up']
+      - commands: ['resize --height -2%']
+        bindings: ['j', 'down']
+
+      - commands: ['wm-disable-binding-mode --name resize']
+        bindings: ['escape', 'enter']
+
+# Keybindings
+# --------------------
+keybindings:
+  # Focus
+  - commands: ['focus --direction left']
+    bindings: ['alt+h']
+  - commands: ['focus --direction right']
+    bindings: ['alt+l']
+  - commands: ['focus --direction up']
+    bindings: ['alt+k']
+  - commands: ['focus --direction down']
+    bindings: ['alt+j']
+
+  # Move
+  - commands: ['move --direction left']
+    bindings: ['alt+shift+h', 'alt+shift+left']
+  - commands: ['move --direction right']
+    bindings: ['alt+shift+l', 'alt+shift+right']
+  - commands: ['move --direction up']
+    bindings: ['alt+shift+k', 'alt+shift+up']
+  - commands: ['move --direction down']
+    bindings: ['alt+shift+j', 'alt+shift+down']
+
+  # Resize
+  - commands: ['resize --width -2%']
+    bindings: ['alt+u']
+  - commands: ['resize --width +2%']
+    bindings: ['alt+p']
+  - commands: ['resize --height +2%']
+    bindings: ['alt+o']
+  - commands: ['resize --height -2%']
+    bindings: ['alt+i']
+
+  # Resize mode
+  - commands: ['wm-enable-binding-mode --name resize']
+    bindings: ['alt+r']
+
+  # Pause
+  - commands: ['wm-toggle-pause']
+    bindings: ['alt+shift+p']
+
+  # Tiling direction
+  - commands: ['toggle-tiling-direction']
+    bindings: ['alt+v']
+
+  # Focus cycle
+  - commands: ['wm-cycle-focus']
+    bindings: ['alt+space']
+
+  # Floating
+  - commands: ['toggle-floating --centered']
+    bindings: ['alt+shift+space']
+
+  # Tiling
+  - commands: ['toggle-tiling']
+    bindings: ['alt+t']
+
+  # Fullscreen
+  - commands: ['toggle-fullscreen']
+    bindings: ['alt+f']
+
+  # Minimize
+  - commands: ['toggle-minimized']
+    bindings: ['alt+m']
+
+  # Close
+  - commands: ['close']
+    bindings: ['alt+shift+q']
+
+  # Exit
+  - commands: ['wm-exit']
+    bindings: ['alt+shift+e']
+
+  # Reload
+  - commands: ['wm-reload-config']
+    bindings: ['alt+shift+r']
+
+  # Redraw
+  - commands: ['wm-redraw']
+    bindings: ['alt+shift+w']
+
+  # Terminal
+  - commands: ['shell-exec cmd']
+    bindings: ['alt+enter']
+
+  # Workspace cycle
+  - commands: ['focus --next-active-workspace']
+    bindings: ['alt+s']
+  - commands: ['focus --prev-active-workspace']
+    bindings: ['alt+a']
+
+  # Workspace recent
+  - commands: ['focus --recent-workspace']
+    bindings: ['alt+d']
+
+  # Workspace focus
+  - commands: ['focus --workspace 1']
+    bindings: ['alt+1']
+  - commands: ['focus --workspace 2']
+    bindings: ['alt+2']
+  - commands: ['focus --workspace 3']
+    bindings: ['alt+3']
+  - commands: ['focus --workspace 4']
+    bindings: ['alt+4']
+  - commands: ['focus --workspace 5']
+    bindings: ['alt+5']
+  - commands: ['focus --workspace 6']
+    bindings: ['alt+6']
+  - commands: ['focus --workspace 7']
+    bindings: ['alt+7']
+  - commands: ['focus --workspace 8']
+    bindings: ['alt+8']
+  - commands: ['focus --workspace 9']
+    bindings: ['alt+9']
+
+  # Workspace to monitor
+  - commands: ['move-workspace --direction left']
+    bindings: ['alt+shift+a']
+  - commands: ['move-workspace --direction right']
+    bindings: ['alt+shift+f']
+  - commands: ['move-workspace --direction up']
+    bindings: ['alt+shift+d']
+  - commands: ['move-workspace --direction down']
+    bindings: ['alt+shift+s']
+
+  # Workspace move
+  - commands: ['move --workspace 1', 'focus --workspace 1']
+    bindings: ['alt+shift+1']
+  - commands: ['move --workspace 2', 'focus --workspace 2']
+    bindings: ['alt+shift+2']
+  - commands: ['move --workspace 3', 'focus --workspace 3']
+    bindings: ['alt+shift+3']
+  - commands: ['move --workspace 4', 'focus --workspace 4']
+    bindings: ['alt+shift+4']
+  - commands: ['move --workspace 5', 'focus --workspace 5']
+    bindings: ['alt+shift+5']
+  - commands: ['move --workspace 6', 'focus --workspace 6']
+    bindings: ['alt+shift+6']
+  - commands: ['move --workspace 7', 'focus --workspace 7']
+    bindings: ['alt+shift+7']
+  - commands: ['move --workspace 8', 'focus --workspace 8']
+    bindings: ['alt+shift+8']
+  - commands: ['move --workspace 9', 'focus --workspace 9']
+    bindings: ['alt+shift+9']

@@ -1,0 +1,163 @@
+# Configuration
+# --------------------
+set $mod Mod4
+set $refresh_i3status killall -SIGUSR1 i3status
+set $ws1 "1:  media"
+set $ws2 "2:  main"
+set $ws3 "3:  test"
+set $ws4 "4:  code:4"
+set $ws5 "5:  code:5"
+set $ws6 "6:  code:6"
+set $ws7 "7:  code:7"
+set $ws8 "8:  code:8"
+set $ws9 "9:  code:9"
+set $ws10 "10:  code:10"
+font pango:Iosevka Custom 12
+default_border pixel 2
+default_floating_border pixel 2
+floating_modifier $mod
+
+# Autostart
+# --------------------
+exec --no-startup-id alacritty --class quake -e zellij attach --create quake options --default-layout quake
+exec --no-startup-id dex-autostart --autostart --environment i3
+exec --no-startup-id nm-applet
+exec --no-startup-id picom
+exec_always --no-startup-id ~/.config/i3/i3-groups.py
+exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id sh -c "xset s off; xset dpms 3600 3600 3600"
+
+# Windows
+# --------------------
+for_window [class="^quake$"] floating enable, resize set 100 ppt 75 ppt, move position 0 0, move to scratchpad
+for_window [class="^notifications$"] floating enable, border pixel 0, resize set 60 ppt 50 ppt, move position center
+for_window [class="^imv$" instance="^quicklook$"] floating enable, border pixel 2, resize set 80 ppt 80 ppt, move position center
+assign [class="(?i)^mpv$"] number $ws1
+assign [class="(?i)^google-chrome$"] number $ws1
+assign [class="(?i)^firefox$"] number $ws2
+assign [class="(?i)^(code|code-url-handler)$" window_type="normal"] number $ws4
+assign [class="(?i)^(org.wezfurlong.wezterm|kitty)$" title="^nvim$"] number $ws3
+assign [class="(?i)^alacritty$"] number $ws2
+assign [class="(?i)^discord$"] number $ws4
+assign [class="(?i)^(telegramdesktop|org.telegram.desktop)$"] number $ws4
+for_window [class="(?i)^(mpv|google-chrome|firefox|code|code-url-handler|alacritty|discord|telegramdesktop|org.telegram.desktop)$"] focus
+for_window [class="(?i)^(org.wezfurlong.wezterm|kitty)$" title="^nvim$"] focus
+
+# Keybindings
+# --------------------
+# Functions
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec --no-startup-id ~/.config/dmenu/dmenu-run
+bindsym $mod+grave exec --no-startup-id ~/.config/i3/i3-quake.sh
+bindsym $mod+Shift+n exec --no-startup-id dunstctl close-all
+bindsym $mod+n exec --no-startup-id ~/.config/i3/i3-notifications.sh
+# Focus
+bindsym $mod+a focus parent
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# Move
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# Layout
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen toggle
+bindsym $mod+h split h
+bindsym $mod+s layout stacking
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+v split v
+bindsym $mod+w layout tabbed
+# Workspaces
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+# Session
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+r restart
+# Audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Resize
+# --------------------
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+# Colors
+# --------------------
+# class                 border  bground text    indicator child_border
+client.focused          #2ECC71 #2ECC71 #000000 #2ECC71   #2ECC71
+client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
+client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
+client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.background       #FFFFFF
+
+# Bar
+# --------------------
+bar {
+    position top
+    font pango:Iosevka Custom 12
+    height 48
+    tray_padding 4
+    separator_symbol "|"
+    strip_workspace_numbers yes
+    bindsym button3 exec --no-startup-id ~/.local/bin/galendae
+    status_command i3status
+    colors {
+        background #000000
+        statusline #FFFFFF
+        separator  #FFFFFF
+
+        focused_workspace  #000000 #000000 #b8ff3d
+        active_workspace   #000000 #000000 #FFFFFF
+        inactive_workspace #000000 #000000 #999999
+        urgent_workspace   #cc241d #cc241d #ebdbb2
+        binding_mode       #689d6a #689d6a #282828
+    }
+}

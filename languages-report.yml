@@ -1,0 +1,218 @@
+# Languages report
+# --------------------
+# language_server:     language server for Neovim, as named in Mason or its own toolchain
+# formatter:           tool that formats files, usable from conform.nvim or the editor
+# syntax_highlighting: tree-sitter parser from nvim-treesitter, else built-in Neovim vim syntax
+# "none" means no option was found.
+# [installed] means it is on this machine now: in Mason, in the PATH, or shipped with Neovim.
+# tree-sitter parsers are marked [not installed] when nvim-treesitter has one but it is not compiled yet.
+
+"Build tools":
+  - "CMake": { language_server: "neocmakelsp", formatter: "gersemi", syntax_highlighting: "tree-sitter (cmake) [not installed]" }
+  - "Dockerfile": { language_server: "dockerfile-language-server", formatter: "dockerfmt", syntax_highlighting: "tree-sitter (dockerfile) [not installed]" }
+  - "Gradle": { language_server: "gradle-language-server", formatter: "none", syntax_highlighting: "tree-sitter (groovy) [not installed]" }
+  - "Makefile": { language_server: "none", formatter: "mbake", syntax_highlighting: "tree-sitter (make) [not installed]" }
+  - "Starlark": { language_server: "starpls", formatter: "buildifier", syntax_highlighting: "tree-sitter (starlark) [not installed]" }
+
+"Configuration and data":
+  - ".env": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (sh) [installed]" }
+  - ".gitignore": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (gitignore) [not installed]" }
+  - "CSV": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (csv) [not installed]" }
+  - "CUE": { language_server: "cue", formatter: "cue fmt", syntax_highlighting: "tree-sitter (cue) [not installed]" }
+  - "Dhall": { language_server: "dhall-lsp", formatter: "dhall format", syntax_highlighting: "tree-sitter (dhall) [not installed]" }
+  - "INI": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (ini) [not installed]" }
+  - "JSON": { language_server: "json-lsp, biome", formatter: "prettier, biome, jq [installed]", syntax_highlighting: "tree-sitter (json) [not installed]" }
+  - "JSON Lines": { language_server: "none", formatter: "jq [installed]", syntax_highlighting: "tree-sitter (json) [not installed]" }
+  - "JSON5": { language_server: "none", formatter: "prettier", syntax_highlighting: "tree-sitter (json5) [not installed]" }
+  - "JSONC": { language_server: "json-lsp", formatter: "prettier, biome", syntax_highlighting: "tree-sitter (json) [not installed]" }
+  - "Jsonnet": { language_server: "jsonnet-language-server", formatter: "jsonnetfmt", syntax_highlighting: "tree-sitter (jsonnet) [not installed]" }
+  - "nginx conf": { language_server: "nginx-language-server", formatter: "nginx-config-formatter", syntax_highlighting: "tree-sitter (nginx) [not installed]" }
+  - "Nix": { language_server: "nil", formatter: "nixfmt, alejandra", syntax_highlighting: "tree-sitter (nix) [not installed]" }
+  - "OpenAPI": { language_server: "yaml-language-server, spectral-language-server", formatter: "prettier", syntax_highlighting: "tree-sitter (yaml) [not installed]" }
+  - "Properties": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (properties) [not installed]" }
+  - "Protocol Buffers": { language_server: "buf, protols", formatter: "buf", syntax_highlighting: "tree-sitter (proto) [not installed]" }
+  - "systemd unit": { language_server: "systemd-lsp", formatter: "none", syntax_highlighting: "vim syntax (systemd) [installed]" }
+  - "TOML": { language_server: "taplo, tombi", formatter: "taplo", syntax_highlighting: "tree-sitter (toml) [not installed]" }
+  - "XML": { language_server: "lemminx", formatter: "xmlformatter", syntax_highlighting: "tree-sitter (xml) [not installed]" }
+  - "YAML": { language_server: "yaml-language-server", formatter: "prettier, yamlfmt", syntax_highlighting: "tree-sitter (yaml) [not installed]" }
+
+"Data query":
+  - "Datalog": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "GraphQL": { language_server: "graphql-language-service-cli", formatter: "prettier", syntax_highlighting: "tree-sitter (graphql) [not installed]" }
+  - "Gremlin": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "jq": { language_server: "jq-lsp", formatter: "none", syntax_highlighting: "tree-sitter (jq) [not installed]" }
+  - "KQL": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (kusto) [not installed]" }
+  - "MDX": { language_server: "mdx-analyzer", formatter: "prettier", syntax_highlighting: "none" }
+  - "PL/pgSQL": { language_server: "postgres-language-server", formatter: "pgformatter", syntax_highlighting: "tree-sitter (sql) [not installed]" }
+  - "PL/SQL": { language_server: "none", formatter: "sql-formatter", syntax_highlighting: "tree-sitter (sql) [not installed]" }
+  - "PromQL": { language_server: "promql-langserver", formatter: "none", syntax_highlighting: "tree-sitter (promql) [not installed]" }
+  - "SPARQL": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (sparql) [not installed]" }
+  - "SQL": { language_server: "sqls, postgres-language-server", formatter: "sql-formatter, sqruff, pgformatter", syntax_highlighting: "tree-sitter (sql) [not installed]" }
+  - "XPath": { language_server: "lemminx", formatter: "none", syntax_highlighting: "none" }
+
+"Esoteric":
+  - "Befunge": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "BQN": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Brainfuck": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Chef": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Cow": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "FALSE": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "FRACTRAN": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "GolfScript": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Haskell-like Unlambda": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "HQ9+": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "INTERCAL": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "J": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (j) [installed]" }
+  - "Jelly": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "LOLCODE": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Malbolge": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Piet": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Rockstar": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Shakespeare": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Whitespace": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+
+"Hardware and low level":
+  - "Assembly": { language_server: "asm-lsp", formatter: "asmfmt", syntax_highlighting: "tree-sitter (asm) [not installed]" }
+  - "Devicetree": { language_server: "ginko_ls", formatter: "none", syntax_highlighting: "tree-sitter (devicetree) [not installed]" }
+  - "LLVM IR": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (llvm) [not installed]" }
+  - "SystemVerilog": { language_server: "verible, svls", formatter: "verible", syntax_highlighting: "tree-sitter (systemverilog) [not installed]" }
+  - "Verilog": { language_server: "hdl-checker", formatter: "verible", syntax_highlighting: "tree-sitter (systemverilog) [not installed]" }
+  - "VHDL": { language_server: "rust_hdl", formatter: "vsg", syntax_highlighting: "tree-sitter (vhdl) [not installed]" }
+  - "WebAssembly": { language_server: "wasm-language-tools", formatter: "wasm-language-tools", syntax_highlighting: "none" }
+
+"Markup and documentation":
+  - "AsciiDoc": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (asciidoc) [installed]" }
+  - "Astro": { language_server: "astro-language-server", formatter: "prettier", syntax_highlighting: "tree-sitter (astro) [not installed]" }
+  - "Blade": { language_server: "laravel_lsp", formatter: "blade-formatter", syntax_highlighting: "tree-sitter (blade) [not installed]" }
+  - "CSS": { language_server: "css-lsp [installed], emmet-ls [installed]", formatter: "prettier, biome", syntax_highlighting: "tree-sitter (css) [installed]" }
+  - "ERB": { language_server: "herb-language-server", formatter: "erb-formatter, htmlbeautifier", syntax_highlighting: "tree-sitter (embedded_template) [not installed]" }
+  - "Graphviz DOT": { language_server: "dot-language-server", formatter: "none", syntax_highlighting: "tree-sitter (dot) [not installed]" }
+  - "Handlebars": { language_server: "glint", formatter: "prettier, djlint [installed]", syntax_highlighting: "tree-sitter (glimmer) [not installed]" }
+  - "HTML": { language_server: "html-lsp, emmet-ls [installed]", formatter: "prettier", syntax_highlighting: "tree-sitter (html) [installed]" }
+  - "Jinja": { language_server: "jinja-lsp", formatter: "djlint [installed]", syntax_highlighting: "tree-sitter (jinja) [not installed]" }
+  - "LaTeX": { language_server: "texlab, ltex-ls-plus [installed]", formatter: "latexindent, tex-fmt", syntax_highlighting: "tree-sitter (latex) [not installed]" }
+  - "Less": { language_server: "css-lsp [installed]", formatter: "prettier", syntax_highlighting: "vim syntax (less) [installed]" }
+  - "Liquid": { language_server: "shopify-cli", formatter: "prettier", syntax_highlighting: "tree-sitter (liquid) [not installed]" }
+  - "Markdown": { language_server: "marksman, ltex-ls-plus [installed]", formatter: "prettier, mdformat", syntax_highlighting: "tree-sitter (markdown) [installed]" }
+  - "Mermaid": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (mermaid) [not installed]" }
+  - "Org mode": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "PlantUML": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Pug": { language_server: "pug-lsp", formatter: "prettier", syntax_highlighting: "tree-sitter (pug) [not installed]" }
+  - "Razor": { language_server: "roslyn-language-server", formatter: "none", syntax_highlighting: "tree-sitter (razor) [not installed]" }
+  - "reStructuredText": { language_server: "ltex-ls-plus [installed]", formatter: "none", syntax_highlighting: "tree-sitter (rst) [not installed]" }
+  - "Sass": { language_server: "some-sass-language-server", formatter: "none", syntax_highlighting: "vim syntax (sass) [installed]" }
+  - "SCSS": { language_server: "some-sass-language-server, css-lsp [installed]", formatter: "prettier", syntax_highlighting: "tree-sitter (scss) [not installed]" }
+  - "Stylus": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (stylus) [installed]" }
+  - "Svelte": { language_server: "svelte-language-server", formatter: "prettier", syntax_highlighting: "tree-sitter (svelte) [not installed]" }
+  - "SVG": { language_server: "lemminx", formatter: "xmlformatter", syntax_highlighting: "tree-sitter (xml) [not installed]" }
+  - "Twig": { language_server: "twiggy-language-server", formatter: "djlint [installed], twig-cs-fixer", syntax_highlighting: "tree-sitter (twig) [installed]" }
+  - "Typst": { language_server: "tinymist", formatter: "typstyle", syntax_highlighting: "tree-sitter (typst) [not installed]" }
+  - "Vue": { language_server: "vue-language-server", formatter: "prettier", syntax_highlighting: "tree-sitter (vue) [not installed]" }
+
+"Programming: functional":
+  - "Bend": { language_server: "bend2-lsp", formatter: "bend-fmt-lsp", syntax_highlighting: "none" }
+  - "Clojure": { language_server: "clojure-lsp", formatter: "cljfmt", syntax_highlighting: "tree-sitter (clojure) [not installed]" }
+  - "Elixir": { language_server: "elixir-ls, expert, lexical", formatter: "mix format", syntax_highlighting: "tree-sitter (elixir) [not installed]" }
+  - "Elm": { language_server: "elm-language-server", formatter: "elm-format", syntax_highlighting: "tree-sitter (elm) [not installed]" }
+  - "Emacs Lisp": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (lisp) [installed]" }
+  - "Erlang": { language_server: "erlang-ls, elp", formatter: "erlfmt", syntax_highlighting: "tree-sitter (erlang) [not installed]" }
+  - "Gleam": { language_server: "gleam lsp", formatter: "gleam format", syntax_highlighting: "tree-sitter (gleam) [not installed]" }
+  - "Haskell": { language_server: "haskell-language-server", formatter: "ormolu, fourmolu", syntax_highlighting: "tree-sitter (haskell) [not installed]" }
+  - "Koka": { language_server: "koka --language-server", formatter: "none", syntax_highlighting: "none" }
+  - "Lisp": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (commonlisp) [not installed]" }
+  - "OCaml": { language_server: "ocaml-lsp", formatter: "ocamlformat", syntax_highlighting: "tree-sitter (ocaml) [not installed]" }
+  - "PureScript": { language_server: "purescript-language-server", formatter: "purescript-tidy", syntax_highlighting: "tree-sitter (purescript) [not installed]" }
+  - "Racket": { language_server: "racket-langserver", formatter: "raco fmt", syntax_highlighting: "tree-sitter (racket) [not installed]" }
+  - "ReScript": { language_server: "rescript-language-server", formatter: "rescript format", syntax_highlighting: "tree-sitter (rescript) [not installed]" }
+  - "Roc": { language_server: "roc_language_server", formatter: "roc format", syntax_highlighting: "tree-sitter (roc) [unmaintained] [not installed]" }
+  - "Scheme": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (scheme) [not installed]" }
+  - "Standard ML": { language_server: "millet", formatter: "smlfmt", syntax_highlighting: "vim syntax (sml) [installed]" }
+  - "Unison": { language_server: "ucm", formatter: "none", syntax_highlighting: "tree-sitter (unison) [unmaintained] [not installed]" }
+
+"Programming: game development and fantasy consoles":
+  - "CHIP-8 (Octo)": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Fennel": { language_server: "fennel-ls", formatter: "fnlfmt", syntax_highlighting: "tree-sitter (fennel) [not installed]" }
+  - "Godot": { language_server: "godot (built-in LSP)", formatter: "gdtoolkit, gdscript-formatter", syntax_highlighting: "tree-sitter (gdscript) [unmaintained] [not installed]" }
+  - "Uxntal": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (uxntal) [not installed]" }
+  - "Wren": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+
+"Programming: general purpose":
+  - "C#": { language_server: "csharp-language-server, roslyn-language-server, omnisharp", formatter: "csharpier", syntax_highlighting: "tree-sitter (c_sharp) [not installed]" }
+  - "COBOL": { language_server: "cobol-language-support", formatter: "none", syntax_highlighting: "vim syntax (cobol) [installed]" }
+  - "Crystal": { language_server: "crystalline", formatter: "crystal tool format", syntax_highlighting: "none" }
+  - "Dart": { language_server: "dart language-server", formatter: "dart format", syntax_highlighting: "tree-sitter (dart) [not installed]" }
+  - "Forth": { language_server: "none", formatter: "none", syntax_highlighting: "tree-sitter (forth) [not installed]" }
+  - "Fortran": { language_server: "fortls", formatter: "fprettify, findent", syntax_highlighting: "tree-sitter (fortran) [not installed]" }
+  - "Groovy": { language_server: "groovy-language-server", formatter: "npm-groovy-lint", syntax_highlighting: "tree-sitter (groovy) [not installed]" }
+  - "Hack": { language_server: "hhvm", formatter: "hackfmt", syntax_highlighting: "tree-sitter (hack) [not installed]" }
+  - "Haxe": { language_server: "haxe-language-server", formatter: "haxe-formatter", syntax_highlighting: "none" }
+  - "Java": { language_server: "jdtls", formatter: "google-java-format", syntax_highlighting: "tree-sitter (java) [not installed]" }
+  - "JavaScript": { language_server: "typescript-language-server [installed], vtsls, biome, deno", formatter: "prettier, biome, eslint_d [installed]", syntax_highlighting: "tree-sitter (javascript) [installed]" }
+  - "JSX y TSX": { language_server: "typescript-language-server [installed]", formatter: "prettier, biome, eslint_d [installed]", syntax_highlighting: "tree-sitter (javascript, tsx) [not installed]" }
+  - "Kotlin": { language_server: "kotlin-language-server, kotlin-lsp", formatter: "ktfmt, ktlint", syntax_highlighting: "tree-sitter (kotlin) [not installed]" }
+  - "Mojo": { language_server: "mojo-lsp-server", formatter: "mojo format", syntax_highlighting: "none" }
+  - "Pascal": { language_server: "pasls", formatter: "ptop", syntax_highlighting: "tree-sitter (pascal) [not installed]" }
+  - "PHP": { language_server: "intelephense, phpactor", formatter: "php-cs-fixer, pint, phpcbf", syntax_highlighting: "tree-sitter (php) [not installed]" }
+  - "Prolog": { language_server: "prolog-lsp", formatter: "none", syntax_highlighting: "vim syntax (prolog) [installed]" }
+  - "Python": { language_server: "pyright [installed], basedpyright, ruff", formatter: "ruff, black, autopep8 [installed]", syntax_highlighting: "tree-sitter (python) [not installed]" }
+  - "Raku": { language_server: "raku-navigator", formatter: "none", syntax_highlighting: "vim syntax (raku) [installed]" }
+  - "Ruby": { language_server: "ruby-lsp, solargraph", formatter: "rubocop", syntax_highlighting: "tree-sitter (ruby) [not installed]" }
+  - "Scala": { language_server: "metals", formatter: "scalafmt", syntax_highlighting: "tree-sitter (scala) [not installed]" }
+  - "Swift": { language_server: "sourcekit-lsp", formatter: "swiftformat", syntax_highlighting: "tree-sitter (swift) [not installed]" }
+  - "TypeScript": { language_server: "typescript-language-server [installed], vtsls, biome, deno", formatter: "prettier, biome, eslint_d [installed]", syntax_highlighting: "tree-sitter (typescript) [installed]" }
+  - "Visual Basic": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (vb) [installed]" }
+
+"Programming: scientific and academic":
+  - "APL": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Coq": { language_server: "coq-lsp", formatter: "none", syntax_highlighting: "none" }
+  - "Julia": { language_server: "julia-lsp", formatter: "JuliaFormatter", syntax_highlighting: "tree-sitter (julia) [not installed]" }
+  - "Lean": { language_server: "lean", formatter: "none", syntax_highlighting: "none" }
+  - "Octave": { language_server: "none", formatter: "miss_hit", syntax_highlighting: "tree-sitter (matlab) [not installed]" }
+  - "R": { language_server: "r-languageserver, air", formatter: "air", syntax_highlighting: "tree-sitter (r) [not installed]" }
+  - "SAS": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (sas) [installed]" }
+  - "Sligh": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Stata": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (stata) [installed]" }
+  - "Wolfram": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (mma) [installed]" }
+  - "Whiley": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+
+"Programming: scripting and shells":
+  - "AppleScript": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "AutoHotkey": { language_server: "autohotkey_lsp", formatter: "none", syntax_highlighting: "vim syntax (autohotkey) [installed]" }
+  - "Awk": { language_server: "awk-language-server", formatter: "none", syntax_highlighting: "tree-sitter (awk) [not installed]" }
+  - "Bash": { language_server: "bash-language-server [installed]", formatter: "shfmt", syntax_highlighting: "tree-sitter (bash) [installed]" }
+  - "Batch (cmd)": { language_server: "none", formatter: "none", syntax_highlighting: "vim syntax (dosbatch) [installed]" }
+  - "Fish": { language_server: "fish-lsp", formatter: "fish_indent", syntax_highlighting: "tree-sitter (fish) [installed]" }
+  - "Lua": { language_server: "lua-language-server [installed]", formatter: "stylua [installed]", syntax_highlighting: "tree-sitter (lua) [installed]" }
+  - "Luau": { language_server: "luau-lsp", formatter: "stylua [installed]", syntax_highlighting: "tree-sitter (luau) [not installed]" }
+  - "Nushell": { language_server: "nushell", formatter: "none", syntax_highlighting: "tree-sitter (nu) [not installed]" }
+  - "PowerShell": { language_server: "powershell-editor-services", formatter: "powershell-editor-services", syntax_highlighting: "tree-sitter (powershell) [not installed]" }
+  - "Vim script": { language_server: "vim-language-server", formatter: "none", syntax_highlighting: "tree-sitter (vim) [installed]" }
+  - "Zsh": { language_server: "bash-language-server [installed]", formatter: "shfmt, beautysh", syntax_highlighting: "tree-sitter (zsh) [not installed]" }
+
+"Programming: smart contracts":
+  - "Move": { language_server: "move-analyzer", formatter: "movefmt", syntax_highlighting: "none" }
+  - "Vyper": { language_server: "vyper-lsp", formatter: "none", syntax_highlighting: "none" }
+
+"Programming: systems":
+  - "Ada": { language_server: "ada-language-server", formatter: "gnatformat", syntax_highlighting: "tree-sitter (ada) [not installed]" }
+  - "C": { language_server: "clangd", formatter: "clang-format [installed]", syntax_highlighting: "tree-sitter (c) [installed]" }
+  - "C++": { language_server: "clangd", formatter: "clang-format [installed]", syntax_highlighting: "tree-sitter (cpp) [not installed]" }
+  - "D": { language_server: "serve-d", formatter: "dfmt", syntax_highlighting: "tree-sitter (d) [not installed]" }
+  - "Go": { language_server: "gopls", formatter: "gofumpt, goimports", syntax_highlighting: "tree-sitter (go) [not installed]" }
+  - "Nim": { language_server: "nimlangserver", formatter: "nimpretty", syntax_highlighting: "tree-sitter (nim) [not installed]" }
+  - "Odin": { language_server: "ols", formatter: "ols", syntax_highlighting: "tree-sitter (odin) [not installed]" }
+  - "Rust": { language_server: "rust-analyzer", formatter: "rustfmt", syntax_highlighting: "tree-sitter (rust) [not installed]" }
+  - "V": { language_server: "v-analyzer", formatter: "v fmt", syntax_highlighting: "tree-sitter (v) [not installed]" }
+  - "Vala": { language_server: "vala-language-server", formatter: "none", syntax_highlighting: "tree-sitter (vala) [not installed]" }
+  - "Zig": { language_server: "zls", formatter: "zig fmt", syntax_highlighting: "tree-sitter (zig) [not installed]" }
+
+"Shaders and GPU":
+  - "CUDA": { language_server: "clangd", formatter: "clang-format [installed]", syntax_highlighting: "tree-sitter (cuda) [not installed]" }
+  - "GLSL": { language_server: "glslls", formatter: "clang-format [installed]", syntax_highlighting: "tree-sitter (glsl) [not installed]" }
+  - "HLSL": { language_server: "none", formatter: "clang-format [installed]", syntax_highlighting: "tree-sitter (hlsl) [not installed]" }
+  - "ShaderLab": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "Slang": { language_server: "slangd", formatter: "none", syntax_highlighting: "none" }
+  - "SPIR-V": { language_server: "none", formatter: "none", syntax_highlighting: "none" }
+  - "WebGL": { language_server: "glslls", formatter: "clang-format [installed]", syntax_highlighting: "tree-sitter (glsl) [not installed]" }
+  - "WebGPU": { language_server: "wgsl-analyzer", formatter: "none", syntax_highlighting: "tree-sitter (wgsl) [not installed]" }
+  - "WGSL": { language_server: "wgsl-analyzer", formatter: "none", syntax_highlighting: "tree-sitter (wgsl) [not installed]" }

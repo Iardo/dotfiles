@@ -1,0 +1,31 @@
+#!/bin/bash
+# ~/.bash_dev
+
+# CONFIG
+export ANDROID_HOME="$HOME/.android/sdk"
+export COMPOSER_MEMORY_LIMIT=-1
+export GOPATH="$HOME/.config/go"
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# ---------------------------------------------------------------------------- #
+# ALIAS
+alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias npml='npm list -g --depth=0'
+alias phpm='php -m'
+alias pipl='pip freeze'
+alias rubl='gem query --local'
+
+# Python
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias python=/usr/local/bin/python3
+  alias pip=/usr/local/bin/pip3
+else
+  alias python=python3
+  alias pip=pip3
+fi
+
+# ---------------------------------------------------------------------------- #
+# INCLUDES
+#if [ -e ~/.bash_nvm ]; then source ~/.bash_nvm; fi
+if [ -e ~/.deno/env ]; then source ~/.deno/env; fi
+if [ -e ~/.sdkman/bin/sdkman-init.sh ]; then source ~/.sdkman/bin/sdkman-init.sh; fi

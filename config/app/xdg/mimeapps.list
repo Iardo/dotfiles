@@ -1,0 +1,15 @@
+[Default Applications]
+application/vnd.ms-publisher=org.lite_xl.lite_xl.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+
+[Added Associations]
+application/vnd.ms-publisher=org.lite_xl.lite_xl.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop;
+text/plain=org.lite_xl.lite_xl.desktop;
+application/pdf=onlyoffice-desktopeditors.desktop;

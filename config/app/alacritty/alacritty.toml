@@ -1,0 +1,15 @@
+# Font
+# --------------------
+[font]
+size = 16
+
+[font.normal]
+family = "Iosevka Custom"
+
+
+# Keybindings
+# --------------------
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

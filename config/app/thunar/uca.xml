@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1790371186443457-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Quick Look</name>
+	<submenu></submenu>
+	<unique-id>1790371186443457-2</unique-id>
+	<command>/home/iardo/.config/i3/i3-quicklook.py %f</command>
+	<description>Preview the selected image in a floating box</description>
+	<range></range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+</actions>

@@ -1,0 +1,1369 @@
+# Languages selection
+# --------------------
+# Set each entry to true to install and enable it, or false to leave it out.
+# tree-sitter parsers start as true. Language servers and formatters start as false,
+# except the ones already installed with Mason, which start as true.
+# "# installed" means it is already on this machine. "# mason" can be installed from Mason,
+# "# manual install" comes with the language toolchain or has to be installed by hand.
+# vim syntax entries are built into Neovim, so they need nothing.
+# When a language has several options, each one says what sets it apart and one is marked ★ recomendado.
+
+"Build tools":
+  "CMake":
+    language_server:
+      "neocmakelsp": true  # mason
+    formatter:
+      "gersemi": true  # mason
+    syntax_highlighting:
+      "cmake": true  # tree-sitter, not installed
+  "Dockerfile":
+    language_server:
+      "dockerfile-language-server": true  # mason
+    formatter:
+      "dockerfmt": true  # mason
+    syntax_highlighting:
+      "dockerfile": true  # tree-sitter, not installed
+  "Gradle":
+    language_server:
+      "gradle-language-server": false  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "groovy": true  # tree-sitter, not installed
+  "Makefile":
+    language_server:
+      {}
+    formatter:
+      "mbake": true  # mason
+    syntax_highlighting:
+      "make": true  # tree-sitter, not installed
+  "Starlark":
+    language_server:
+      "starpls": false  # mason
+    formatter:
+      "buildifier": false  # mason
+    syntax_highlighting:
+      "starlark": true  # tree-sitter, not installed
+
+"Configuration and data":
+  ".env":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (sh)": true  # built-in in Neovim, nothing to install
+  ".gitignore":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "gitignore": true  # tree-sitter, not installed
+  "CSV":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "csv": true  # tree-sitter, not installed
+  "CUE":
+    language_server:
+      "cue": false  # mason
+    formatter:
+      "cue fmt": false  # manual install
+    syntax_highlighting:
+      "cue": true  # tree-sitter, not installed
+  "Dhall":
+    language_server:
+      "dhall-lsp": false  # mason
+    formatter:
+      "dhall format": false  # manual install
+    syntax_highlighting:
+      "dhall": true  # tree-sitter, not installed
+  "INI":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "ini": true  # tree-sitter, not installed
+  "JSON":
+    language_server:
+      "json-lsp": true  # mason | ★ recomendado: oficial de VS Code, valida con esquemas
+      "biome": true  # mason | rápido, también formatea y lintea
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el estándar, muy extendido
+      "biome": true  # mason | mucho más rápido, casi igual a prettier
+      "jq": true  # mason, installed | solo JSON, sin configuración
+    syntax_highlighting:
+      "json": true  # tree-sitter, not installed
+  "JSON Lines":
+    language_server:
+      {}
+    formatter:
+      "jq": true  # mason, installed
+    syntax_highlighting:
+      "json": true  # tree-sitter, not installed
+  "JSON5":
+    language_server:
+      {}
+    formatter:
+      "prettier": false  # mason
+    syntax_highlighting:
+      "json5": true  # tree-sitter, not installed
+  "JSONC":
+    language_server:
+      "json-lsp": true  # mason
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el estándar, muy extendido
+      "biome": true  # mason | mucho más rápido, casi igual a prettier
+    syntax_highlighting:
+      "json": true  # tree-sitter, not installed
+  "Jsonnet":
+    language_server:
+      "jsonnet-language-server": false  # mason
+    formatter:
+      "jsonnetfmt": false  # mason
+    syntax_highlighting:
+      "jsonnet": true  # tree-sitter, not installed
+  "nginx conf":
+    language_server:
+      "nginx-language-server": true  # mason
+    formatter:
+      "nginx-config-formatter": true  # mason
+    syntax_highlighting:
+      "nginx": true  # tree-sitter, not installed
+  "Nix":
+    language_server:
+      "nil": true  # mason
+    formatter:
+      "nixfmt": true  # mason | ★ recomendado: el oficial de la comunidad
+      "alejandra": false  # mason | con opiniones fijas, muy usado
+    syntax_highlighting:
+      "nix": true  # tree-sitter, not installed
+  "OpenAPI":
+    language_server:
+      "yaml-language-server": true  # mason | ★ recomendado: valida YAML con esquemas OpenAPI
+      "spectral-language-server": false  # mason | lintea la especificación con reglas de estilo
+    formatter:
+      "prettier": false  # mason
+    syntax_highlighting:
+      "yaml": true  # tree-sitter, not installed
+  "Properties":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "properties": true  # tree-sitter, not installed
+  "Protocol Buffers":
+    language_server:
+      "buf": true  # mason | ★ recomendado: el oficial de Buf, completo y mantenido
+      "protols": false  # mason | ligero, con menos funciones
+    formatter:
+      "buf": true  # mason
+    syntax_highlighting:
+      "proto": true  # tree-sitter, not installed
+  "systemd unit":
+    language_server:
+      "systemd-lsp": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (systemd)": true  # built-in in Neovim, nothing to install
+  "TOML":
+    language_server:
+      "taplo": true  # mason | ★ recomendado: el estándar, con esquemas y formato
+      "tombi": false  # mason | nuevo y activo, aún joven
+    formatter:
+      "taplo": true  # mason
+    syntax_highlighting:
+      "toml": true  # tree-sitter, not installed
+  "XML":
+    language_server:
+      "lemminx": true  # mason
+    formatter:
+      "xmlformatter": true  # mason
+    syntax_highlighting:
+      "xml": true  # tree-sitter, not installed
+  "YAML":
+    language_server:
+      "yaml-language-server": true  # mason
+    formatter:
+      "prettier": true  # mason | ★ recomendado: el estándar, muy extendido
+      "yamlfmt": false  # mason | de Google, solo YAML, rápido
+    syntax_highlighting:
+      "yaml": true  # tree-sitter, not installed
+
+"Data query":
+  "Datalog":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "GraphQL":
+    language_server:
+      "graphql-language-service-cli": true  # mason
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "graphql": true  # tree-sitter, not installed
+  "Gremlin":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "jq":
+    language_server:
+      "jq-lsp": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "jq": true  # tree-sitter, not installed
+  "KQL":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "kusto": true  # tree-sitter, not installed
+  "MDX":
+    language_server:
+      "mdx-analyzer": true  # mason
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      {}
+  "PL/pgSQL":
+    language_server:
+      "postgres-language-server": true  # mason
+    formatter:
+      "pgformatter": true  # mason
+    syntax_highlighting:
+      "sql": true  # tree-sitter, not installed
+  "PL/SQL":
+    language_server:
+      {}
+    formatter:
+      "sql-formatter": true  # mason
+    syntax_highlighting:
+      "sql": true  # tree-sitter, not installed
+  "PromQL":
+    language_server:
+      "promql-langserver": false  # manual install
+    formatter:
+      {}
+    syntax_highlighting:
+      "promql": true  # tree-sitter, not installed
+  "SPARQL":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "sparql": true  # tree-sitter, not installed
+  "SQL":
+    language_server:
+      "sqls": false  # mason | genérico, varias bases, poco mantenido
+      "postgres-language-server": true  # mason | ★ recomendado: el más completo si usas PostgreSQL
+    formatter:
+      "sql-formatter": true  # mason | ★ recomendado: varios dialectos, sin conectar a la base
+      "sqruff": false  # mason | muy rápido, formatea y lintea
+      "pgformatter": false  # mason | solo PostgreSQL, estilo clásico
+    syntax_highlighting:
+      "sql": true  # tree-sitter, not installed
+  "XPath":
+    language_server:
+      "lemminx": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+
+"Esoteric":
+  "Befunge":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "BQN":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Brainfuck":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Chef":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Cow":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "FALSE":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "FRACTRAN":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "GolfScript":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Haskell-like Unlambda":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "HQ9+":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "INTERCAL":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "J":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (j)": true  # built-in in Neovim, nothing to install
+  "Jelly":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "LOLCODE":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Malbolge":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Piet":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Rockstar":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Shakespeare":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Whitespace":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+
+"Hardware and low level":
+  "Assembly":
+    language_server:
+      "asm-lsp": true  # mason
+    formatter:
+      "asmfmt": true  # mason
+    syntax_highlighting:
+      "asm": true  # tree-sitter, not installed
+  "Devicetree":
+    language_server:
+      "ginko_ls": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "devicetree": true  # tree-sitter, not installed
+  "LLVM IR":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "llvm": true  # tree-sitter, not installed
+  "SystemVerilog":
+    language_server:
+      "verible": true  # mason | ★ recomendado: completo, de Google y CHIPS Alliance
+      "svls": false  # mason | ligero, solo diagnósticos
+    formatter:
+      "verible": true  # mason
+    syntax_highlighting:
+      "systemverilog": true  # tree-sitter, not installed
+  "Verilog":
+    language_server:
+      "hdl-checker": true  # mason
+    formatter:
+      "verible": true  # mason
+    syntax_highlighting:
+      "systemverilog": true  # tree-sitter, not installed
+  "VHDL":
+    language_server:
+      "rust_hdl": true  # mason
+    formatter:
+      "vsg": true  # mason
+    syntax_highlighting:
+      "vhdl": true  # tree-sitter, not installed
+  "WebAssembly":
+    language_server:
+      "wasm-language-tools": true  # mason
+    formatter:
+      "wasm-language-tools": true  # mason
+    syntax_highlighting:
+      {}
+
+"Markup and documentation":
+  "AsciiDoc":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (asciidoc)": true  # built-in in Neovim, nothing to install
+  "Astro":
+    language_server:
+      "astro-language-server": false  # mason
+    formatter:
+      "prettier": false  # mason
+    syntax_highlighting:
+      "astro": true  # tree-sitter, not installed
+  "Blade":
+    language_server:
+      "laravel_lsp": false  # mason
+    formatter:
+      "blade-formatter": false  # mason
+    syntax_highlighting:
+      "blade": true  # tree-sitter, not installed
+  "CSS":
+    language_server:
+      "css-lsp": true  # mason, installed | ★ recomendado: el oficial de VS Code
+      "emmet-ls": true  # mason, installed | solo abreviaturas Emmet, complementa
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el estándar, muy extendido
+      "biome": true  # mason | más rápido, su CSS es más joven
+    syntax_highlighting:
+      "css": true  # tree-sitter, installed
+  "ERB":
+    language_server:
+      "herb-language-server": false  # mason
+    formatter:
+      "erb-formatter": false  # mason | ★ recomendado: formatea ERB completo
+      "htmlbeautifier": false  # mason | clásico, solo reindenta
+    syntax_highlighting:
+      "embedded_template": true  # tree-sitter, not installed
+  "Graphviz DOT":
+    language_server:
+      "dot-language-server": false  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "dot": true  # tree-sitter, not installed
+  "Handlebars":
+    language_server:
+      "glint": true  # mason
+    formatter:
+      "prettier": false  # mason | ★ recomendado: soporte nativo de Handlebars
+      "djlint": true  # mason, installed | pensado para Jinja y Django, Handlebars parcial
+    syntax_highlighting:
+      "glimmer": true  # tree-sitter, not installed
+  "HTML":
+    language_server:
+      "html-lsp": true  # mason | ★ recomendado: el oficial de VS Code
+      "emmet-ls": true  # mason, installed | solo abreviaturas Emmet, complementa
+    formatter:
+      "prettier": false  # mason
+    syntax_highlighting:
+      "html": true  # tree-sitter, installed
+  "Jinja":
+    language_server:
+      "jinja-lsp": true  # mason
+    formatter:
+      "djlint": true  # mason, installed
+    syntax_highlighting:
+      "jinja": true  # tree-sitter, not installed
+  "LaTeX":
+    language_server:
+      "texlab": false  # mason | ★ recomendado: completo para LaTeX
+      "ltex-ls-plus": true  # mason, installed | corrige gramática, pesado porque trae Java
+    formatter:
+      "latexindent": false  # mason | ★ recomendado: el estándar, muy configurable
+      "tex-fmt": false  # mason | muy rápido, con menos opciones
+    syntax_highlighting:
+      "latex": true  # tree-sitter, not installed
+  "Less":
+    language_server:
+      "css-lsp": true  # mason, installed
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "vim syntax (less)": true  # built-in in Neovim, nothing to install
+  "Liquid":
+    language_server:
+      "shopify-cli": true  # mason
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "liquid": true  # tree-sitter, not installed
+  "Markdown":
+    language_server:
+      "marksman": true  # mason | ★ recomendado: enlaces, encabezados y navegación
+      "ltex-ls-plus": true  # mason, installed | corrige gramática, pesado porque trae Java
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el más usado
+      "mdformat": true  # mason | conservador, hecho en Python
+    syntax_highlighting:
+      "markdown": true  # tree-sitter, installed
+  "Mermaid":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "mermaid": true  # tree-sitter, not installed
+  "Org mode":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "PlantUML":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Pug":
+    language_server:
+      "pug-lsp": true  # mason
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "pug": true  # tree-sitter, not installed
+  "Razor":
+    language_server:
+      "roslyn-language-server": false  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "razor": true  # tree-sitter, not installed
+  "reStructuredText":
+    language_server:
+      "ltex-ls-plus": true  # mason, installed
+    formatter:
+      {}
+    syntax_highlighting:
+      "rst": true  # tree-sitter, not installed
+  "Sass":
+    language_server:
+      "some-sass-language-server": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (sass)": true  # built-in in Neovim, nothing to install
+  "SCSS":
+    language_server:
+      "some-sass-language-server": true  # mason | ★ recomendado: hecho para Sass, entiende @use
+      "css-lsp": true  # mason, installed | genérico de CSS, limitado en Sass
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "scss": true  # tree-sitter, not installed
+  "Stylus":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (stylus)": true  # built-in in Neovim, nothing to install
+  "Svelte":
+    language_server:
+      "svelte-language-server": true  # mason
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "svelte": true  # tree-sitter, not installed
+  "SVG":
+    language_server:
+      "lemminx": true  # mason
+    formatter:
+      "xmlformatter": true  # mason
+    syntax_highlighting:
+      "xml": true  # tree-sitter, not installed
+  "Twig":
+    language_server:
+      "twiggy-language-server": true  # mason
+    formatter:
+      "djlint": true  # mason, installed | ★ recomendado: reindenta el HTML y las etiquetas
+      "twig-cs-fixer": false  # mason | arregla estilo, no reindenta, pide Composer
+    syntax_highlighting:
+      "twig": true  # tree-sitter, installed
+  "Typst":
+    language_server:
+      "tinymist": true  # mason
+    formatter:
+      "typstyle": true  # mason
+    syntax_highlighting:
+      "typst": true  # tree-sitter, not installed
+  "Vue":
+    language_server:
+      "vue-language-server": true  # mason
+    formatter:
+      "prettier": true  # mason
+    syntax_highlighting:
+      "vue": true  # tree-sitter, not installed
+
+"Programming: functional":
+  "Bend":
+    language_server:
+      "bend2-lsp": true  # manual install | comunitario; el oficial bend-fmt-lsp solo formatea
+    formatter:
+      "bend-fmt-lsp": true  # manual install | oficial, es un servidor que solo formatea, viene en el repo de Bend
+    syntax_highlighting:
+      {}  # sin parser en nvim-treesitter; existen tree-sitter-bend2 y bend.vim, comunitarios
+  "Clojure":
+    language_server:
+      "clojure-lsp": false  # mason
+    formatter:
+      "cljfmt": false  # mason
+    syntax_highlighting:
+      "clojure": true  # tree-sitter, not installed
+  "Elixir":
+    language_server:
+      "elixir-ls": true  # mason | ★ recomendado: el más probado y usado
+      "expert": false  # mason | nuevo, une lexical y Next LS
+      "lexical": false  # mason | rápido, ahora absorbido por expert
+    formatter:
+      "mix format": true  # manual install
+    syntax_highlighting:
+      "elixir": true  # tree-sitter, not installed
+  "Elm":
+    language_server:
+      "elm-language-server": true  # mason
+    formatter:
+      "elm-format": true  # mason
+    syntax_highlighting:
+      "elm": true  # tree-sitter, not installed
+  "Emacs Lisp":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (lisp)": true  # built-in in Neovim, nothing to install
+  "Erlang":
+    language_server:
+      "erlang-ls": false  # mason | el anterior, menos activo
+      "elp": true  # mason | ★ recomendado: de Meta, rápido y moderno
+    formatter:
+      "erlfmt": true  # manual install
+    syntax_highlighting:
+      "erlang": true  # tree-sitter, not installed
+  "Gleam":
+    language_server:
+      "gleam lsp": true  # manual install
+    formatter:
+      "gleam format": true  # manual install
+    syntax_highlighting:
+      "gleam": true  # tree-sitter, not installed
+  "Haskell":
+    language_server:
+      "haskell-language-server": true  # mason
+    formatter:
+      "ormolu": false  # mason | ★ recomendado: casi sin configuración, estilo único
+      "fourmolu": true  # mason | como ormolu pero configurable
+    syntax_highlighting:
+      "haskell": true  # tree-sitter, not installed
+  "Koka":
+    language_server:
+      "koka --language-server": true  # manual install | el propio compilador hace de servidor; nvim-lspconfig ya trae su configuración
+    formatter:
+      {}  # Koka no tiene formateador
+    syntax_highlighting:
+      {}  # sin parser en nvim-treesitter; existen tree-sitter-koka y koka.nvim, comunitarios
+  "Lisp":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "commonlisp": true  # tree-sitter, not installed
+  "OCaml":
+    language_server:
+      "ocaml-lsp": true  # mason
+    formatter:
+      "ocamlformat": true  # mason
+    syntax_highlighting:
+      "ocaml": true  # tree-sitter, not installed
+  "PureScript":
+    language_server:
+      "purescript-language-server": false  # mason
+    formatter:
+      "purescript-tidy": false  # mason
+    syntax_highlighting:
+      "purescript": true  # tree-sitter, not installed
+  "Racket":
+    language_server:
+      "racket-langserver": true  # manual install
+    formatter:
+      "raco fmt": true  # manual install
+    syntax_highlighting:
+      "racket": true  # tree-sitter, not installed
+  "ReScript":
+    language_server:
+      "rescript-language-server": true  # mason
+    formatter:
+      "rescript format": true  # manual install
+    syntax_highlighting:
+      "rescript": true  # tree-sitter, not installed
+  "Roc":
+    language_server:
+      "roc_language_server": true  # mason | servidor básico, también viene con el nightly de Roc
+    formatter:
+      "roc format": true  # manual install | viene dentro del compilador de Roc
+    syntax_highlighting:
+      "roc": true  # tree-sitter, not installed, unmaintained
+  "Scheme":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "scheme": true  # tree-sitter, not installed
+  "Standard ML":
+    language_server:
+      "millet": true  # mason
+    formatter:
+      "smlfmt": true  # manual install
+    syntax_highlighting:
+      "vim syntax (sml)": true  # built-in in Neovim, nothing to install
+  "Unison":
+    language_server:
+      "ucm": true  # manual install | viene dentro de ucm, se conecta por el puerto 5757
+    formatter:
+      {}  # no encontré formateador
+    syntax_highlighting:
+      "unison": true  # tree-sitter, not installed, unmaintained
+
+"Programming: game development and fantasy consoles":
+  "CHIP-8 (Octo)":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Fennel":
+    language_server:
+      "fennel-ls": true  # mason
+    formatter:
+      "fnlfmt": true  # manual install
+    syntax_highlighting:
+      "fennel": true  # tree-sitter, not installed
+  "Godot":
+    language_server:
+      "godot (built-in LSP)": true  # manual install
+    formatter:
+      "gdtoolkit": true  # mason | ★ recomendado: el de la comunidad, también lintea
+      "gdscript-formatter": false  # mason | binario rápido, solo formatea
+    syntax_highlighting:
+      "gdscript": true  # tree-sitter, not installed, unmaintained
+  "Uxntal":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "uxntal": true  # tree-sitter, not installed
+  "Wren":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+
+"Programming: general purpose":
+  "C#":
+    language_server:
+      "csharp-language-server": false  # mason | comunitario, sobre Roslyn
+      "roslyn-language-server": true  # mason | ★ recomendado: el oficial actual de Microsoft
+      "omnisharp": false  # mason | el clásico, en retirada
+    formatter:
+      "csharpier": true  # mason
+    syntax_highlighting:
+      "c_sharp": true  # tree-sitter, not installed
+  "COBOL":
+    language_server:
+      "cobol-language-support": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (cobol)": true  # built-in in Neovim, nothing to install
+  "Crystal":
+    language_server:
+      "crystalline": true  # mason
+    formatter:
+      "crystal tool format": true  # manual install
+    syntax_highlighting:
+      {}
+  "Dart":
+    language_server:
+      "dart language-server": true  # manual install
+    formatter:
+      "dart format": true  # manual install
+    syntax_highlighting:
+      "dart": true  # tree-sitter, not installed
+  "Forth":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "forth": true  # tree-sitter, not installed
+  "Fortran":
+    language_server:
+      "fortls": true  # mason
+    formatter:
+      "fprettify": true  # mason | ★ recomendado: el más usado
+      "findent": false  # mason | también reindenta código antiguo
+    syntax_highlighting:
+      "fortran": true  # tree-sitter, not installed
+  "Groovy":
+    language_server:
+      "groovy-language-server": false  # mason
+    formatter:
+      "npm-groovy-lint": false  # mason
+    syntax_highlighting:
+      "groovy": true  # tree-sitter, not installed
+  "Hack":
+    language_server:
+      "hhvm": true  # manual install
+    formatter:
+      "hackfmt": true  # manual install
+    syntax_highlighting:
+      "hack": true  # tree-sitter, not installed
+  "Haxe":
+    language_server:
+      "haxe-language-server": true  # mason
+    formatter:
+      "haxe-formatter": true  # manual install
+    syntax_highlighting:
+      {}
+  "Java":
+    language_server:
+      "jdtls": false  # mason
+    formatter:
+      "google-java-format": false  # mason
+    syntax_highlighting:
+      "java": true  # tree-sitter, not installed
+  "JavaScript":
+    language_server:
+      "typescript-language-server": true  # mason, installed | ★ recomendado: el estándar, estable
+      "vtsls": false  # mason | como el de VS Code, más completo
+      "biome": false  # mason | lint y formato, no analiza tipos
+      "deno": false  # mason | para proyectos Deno, no para Node
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el estándar, muy extendido
+      "biome": true  # mason | mucho más rápido, casi igual a prettier
+      "eslint_d": true  # mason, installed | aplica reglas de ESLint, pide configuración
+    syntax_highlighting:
+      "javascript": true  # tree-sitter, installed
+  "JSX y TSX":
+    language_server:
+      "typescript-language-server": true  # mason, installed
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el estándar, muy extendido
+      "biome": true  # mason | mucho más rápido, casi igual a prettier
+      "eslint_d": true  # mason, installed | aplica reglas de ESLint, pide configuración
+    syntax_highlighting:
+      "javascript": true  # tree-sitter, installed
+      "tsx": true  # tree-sitter, not installed
+  "Kotlin":
+    language_server:
+      "kotlin-language-server": false  # mason | comunitario, más antiguo
+      "kotlin-lsp": true  # mason | ★ recomendado: de JetBrains, más moderno
+    formatter:
+      "ktfmt": false  # mason | ★ recomendado: de Google, sin configuración
+      "ktlint": true  # mason | estilo oficial de Kotlin, configurable
+    syntax_highlighting:
+      "kotlin": true  # tree-sitter, not installed
+  "Mojo":
+    language_server:
+      "mojo-lsp-server": true  # manual install
+    formatter:
+      "mojo format": true  # manual install
+    syntax_highlighting:
+      {}
+  "Pascal":
+    language_server:
+      "pasls": true  # manual install
+    formatter:
+      "ptop": true  # manual install
+    syntax_highlighting:
+      "pascal": true  # tree-sitter, not installed
+  "PHP":
+    language_server:
+      "intelephense": true  # mason | ★ recomendado: muy rápido, algunas funciones de pago
+      "phpactor": false  # mason | gratis y abierto, más lento
+    formatter:
+      "php-cs-fixer": true  # mason | ★ recomendado: el estándar general, PSR-12
+      "pint": false  # mason | de Laravel, con opiniones fijas
+      "phpcbf": false  # mason | el de Drupal, pide sus reglas
+    syntax_highlighting:
+      "php": true  # tree-sitter, not installed
+  "Prolog":
+    language_server:
+      "prolog-lsp": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (prolog)": true  # built-in in Neovim, nothing to install
+  "Python":
+    language_server:
+      "pyright": true  # mason, installed | ★ recomendado: tipos exactos y rápido
+      "basedpyright": false  # mason | fork de pyright con más reglas
+      "ruff": true  # mason | solo lint y formato, complementa
+    formatter:
+      "ruff": true  # mason | ★ recomendado: muy rápido, formatea y lintea
+      "black": false  # mason | el clásico, muy extendido
+      "autopep8": true  # mason, installed | solo arregla PEP 8
+    syntax_highlighting:
+      "python": true  # tree-sitter, not installed
+  "Raku":
+    language_server:
+      "raku-navigator": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (raku)": true  # built-in in Neovim, nothing to install
+  "Ruby":
+    language_server:
+      "ruby-lsp": true  # mason | ★ recomendado: de Shopify, moderno y activo
+      "solargraph": false  # mason | el clásico, más lento
+    formatter:
+      "rubocop": true  # mason
+    syntax_highlighting:
+      "ruby": true  # tree-sitter, not installed
+  "Scala":
+    language_server:
+      "metals": false  # manual install
+    formatter:
+      "scalafmt": false  # manual install
+    syntax_highlighting:
+      "scala": true  # tree-sitter, not installed
+  "Swift":
+    language_server:
+      "sourcekit-lsp": true  # manual install
+    formatter:
+      "swiftformat": true  # mason
+    syntax_highlighting:
+      "swift": true  # tree-sitter, not installed
+  "TypeScript":
+    language_server:
+      "typescript-language-server": true  # mason, installed | ★ recomendado: el estándar, estable
+      "vtsls": false  # mason | como el de VS Code, más completo
+      "biome": false  # mason | lint y formato, no analiza tipos
+      "deno": false  # mason | para proyectos Deno, no para Node
+    formatter:
+      "prettier": false  # mason | ★ recomendado: el estándar, muy extendido
+      "biome": true  # mason | mucho más rápido, casi igual a prettier
+      "eslint_d": true  # mason, installed | aplica reglas de ESLint, pide configuración
+    syntax_highlighting:
+      "typescript": true  # tree-sitter, installed
+  "Visual Basic":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (vb)": true  # built-in in Neovim, nothing to install
+
+"Programming: scientific and academic":
+  "APL":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Coq":
+    language_server:
+      "coq-lsp": false  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Julia":
+    language_server:
+      "julia-lsp": true  # mason
+    formatter:
+      "JuliaFormatter": true  # manual install
+    syntax_highlighting:
+      "julia": true  # tree-sitter, not installed
+  "Lean":
+    language_server:
+      "lean": false  # manual install
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Octave":
+    language_server:
+      {}
+    formatter:
+      "miss_hit": false  # mason
+    syntax_highlighting:
+      "matlab": true  # tree-sitter, not installed
+  "R":
+    language_server:
+      "r-languageserver": false  # mason | ★ recomendado: el estándar para R
+      "air": false  # mason | solo formatea
+    formatter:
+      "air": false  # mason
+    syntax_highlighting:
+      "r": true  # tree-sitter, not installed
+  "SAS":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (sas)": true  # built-in in Neovim, nothing to install
+  "Sligh":
+    language_server:
+      {}  # el README no menciona soporte de editor
+    formatter:
+      {}  # el README no menciona soporte de editor
+    syntax_highlighting:
+      {}  # el README no menciona soporte de editor
+  "Stata":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (stata)": true  # built-in in Neovim, nothing to install
+  "Wolfram":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (mma)": true  # built-in in Neovim, nothing to install
+  "Whiley":
+    language_server:
+      {}  # no encontré servidor de lenguaje
+    formatter:
+      {}  # no encontré formateador
+    syntax_highlighting:
+      {}  # solo hay gramática TextMate y Sublime; sin parser en nvim-treesitter
+
+"Programming: scripting and shells":
+  "AppleScript":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "AutoHotkey":
+    language_server:
+      "autohotkey_lsp": false  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (autohotkey)": true  # built-in in Neovim, nothing to install
+  "Awk":
+    language_server:
+      "awk-language-server": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "awk": true  # tree-sitter, not installed
+  "Bash":
+    language_server:
+      "bash-language-server": true  # mason, installed
+    formatter:
+      "shfmt": true  # mason
+    syntax_highlighting:
+      "bash": true  # tree-sitter, installed
+  "Batch (cmd)":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim syntax (dosbatch)": true  # built-in in Neovim, nothing to install
+  "Fish":
+    language_server:
+      "fish-lsp": false  # mason
+    formatter:
+      "fish_indent": false  # manual install
+    syntax_highlighting:
+      "fish": true  # tree-sitter, installed
+  "Lua":
+    language_server:
+      "lua-language-server": true  # mason, installed
+    formatter:
+      "stylua": true  # mason, installed
+    syntax_highlighting:
+      "lua": true  # tree-sitter, installed
+  "Luau":
+    language_server:
+      "luau-lsp": false  # mason
+    formatter:
+      "stylua": true  # mason, installed
+    syntax_highlighting:
+      "luau": true  # tree-sitter, not installed
+  "Nushell":
+    language_server:
+      "nushell": true  # manual install
+    formatter:
+      {}
+    syntax_highlighting:
+      "nu": true  # tree-sitter, not installed
+  "PowerShell":
+    language_server:
+      "powershell-editor-services": true  # mason
+    formatter:
+      "powershell-editor-services": true  # mason
+    syntax_highlighting:
+      "powershell": true  # tree-sitter, not installed
+  "Vim script":
+    language_server:
+      "vim-language-server": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vim": true  # tree-sitter, installed
+  "Zsh":
+    language_server:
+      "bash-language-server": true  # mason, installed
+    formatter:
+      "shfmt": false  # mason | el estándar de shell, Zsh no del todo
+      "beautysh": true  # mason | ★ recomendado: entiende Zsh
+    syntax_highlighting:
+      "zsh": true  # tree-sitter, not installed
+
+"Programming: smart contracts":
+  "Move":
+    language_server:
+      "move-analyzer": false  # mason
+    formatter:
+      "movefmt": false  # manual install
+    syntax_highlighting:
+      {}
+  "Vyper":
+    language_server:
+      "vyper-lsp": false  # manual install
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+
+"Programming: systems":
+  "Ada":
+    language_server:
+      "ada-language-server": true  # mason
+    formatter:
+      "gnatformat": true  # manual install
+    syntax_highlighting:
+      "ada": true  # tree-sitter, not installed
+  "C":
+    language_server:
+      "clangd": true  # mason
+    formatter:
+      "clang-format": true  # mason, installed
+    syntax_highlighting:
+      "c": true  # tree-sitter, installed
+  "C++":
+    language_server:
+      "clangd": true  # mason
+    formatter:
+      "clang-format": true  # mason, installed
+    syntax_highlighting:
+      "cpp": true  # tree-sitter, not installed
+  "D":
+    language_server:
+      "serve-d": false  # mason
+    formatter:
+      "dfmt": false  # manual install
+    syntax_highlighting:
+      "d": true  # tree-sitter, not installed
+  "Go":
+    language_server:
+      "gopls": true  # mason
+    formatter:
+      "gofumpt": true  # mason | ★ recomendado: gofmt más estricto
+      "goimports": false  # mason | gofmt y ordena los imports
+    syntax_highlighting:
+      "go": true  # tree-sitter, not installed
+  "Nim":
+    language_server:
+      "nimlangserver": true  # mason
+    formatter:
+      "nimpretty": true  # manual install
+    syntax_highlighting:
+      "nim": true  # tree-sitter, not installed
+  "Odin":
+    language_server:
+      "ols": true  # mason
+    formatter:
+      "ols": true  # mason
+    syntax_highlighting:
+      "odin": true  # tree-sitter, not installed
+  "Rust":
+    language_server:
+      "rust-analyzer": true  # mason
+    formatter:
+      "rustfmt": true  # manual install
+    syntax_highlighting:
+      "rust": true  # tree-sitter, not installed
+  "V":
+    language_server:
+      "v-analyzer": false  # mason
+    formatter:
+      "v fmt": false  # manual install
+    syntax_highlighting:
+      "v": true  # tree-sitter, not installed
+  "Vala":
+    language_server:
+      "vala-language-server": false  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "vala": true  # tree-sitter, not installed
+  "Zig":
+    language_server:
+      "zls": true  # mason
+    formatter:
+      "zig fmt": true  # manual install
+    syntax_highlighting:
+      "zig": true  # tree-sitter, not installed
+
+"Shaders and GPU":
+  "CUDA":
+    language_server:
+      "clangd": true  # mason
+    formatter:
+      "clang-format": true  # mason, installed
+    syntax_highlighting:
+      "cuda": true  # tree-sitter, not installed
+  "GLSL":
+    language_server:
+      "glslls": true  # mason
+    formatter:
+      "clang-format": true  # mason, installed
+    syntax_highlighting:
+      "glsl": true  # tree-sitter, not installed
+  "HLSL":
+    language_server:
+      {}
+    formatter:
+      "clang-format": true  # mason, installed
+    syntax_highlighting:
+      "hlsl": true  # tree-sitter, not installed
+  "ShaderLab":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "Slang":
+    language_server:
+      "slangd": true  # manual install
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "SPIR-V":
+    language_server:
+      {}
+    formatter:
+      {}
+    syntax_highlighting:
+      {}
+  "WebGL":
+    language_server:
+      "glslls": true  # mason
+    formatter:
+      "clang-format": true  # mason, installed
+    syntax_highlighting:
+      "glsl": true  # tree-sitter, not installed
+  "WebGPU":
+    language_server:
+      "wgsl-analyzer": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "wgsl": true  # tree-sitter, not installed
+  "WGSL":
+    language_server:
+      "wgsl-analyzer": true  # mason
+    formatter:
+      {}
+    syntax_highlighting:
+      "wgsl": true  # tree-sitter, not installed
