@@ -1,4 +1,0 @@
-asset:
-  name: 'inconsolata'
-  uri: 'https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Inconsolata'
-  provider: 'github'

@@ -1,4 +1,0 @@
-asset:
-  name: 'ibm-plex-mono'
-  uri: 'https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/IBMPlexMono'
-  provider: 'github'
