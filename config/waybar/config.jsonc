@@ -11,9 +11,9 @@
 
   "modules-left": [
     "hyprland/workspaces",
-    //"hyprland/scratchpad",
+    // "hyprland/scratchpad",
     "tray",
-    //"hyprland/mode",
+    // "hyprland/mode",
     // "hyprland/window",
     "mpd"
   ],
@@ -21,18 +21,13 @@
     "clock"
   ],
   "modules-right": [
-    // "idle_inhibitor",
-    // "power-profiles-daemon",
+    "hyprland/submap",
     "temperature",
     "cpu",
     "memory",
     "disk",
     "network",
     "pulseaudio"
-    // "backlight",
-    // "keyboard-state",
-    // "hyprland/language",
-    // "battery"
   ],
 
 
@@ -47,12 +42,15 @@
       "3": " code",
       "4": "󱋊 chat"
     },
-    "persistent-workspaces": {
-      "1": [ "DP-3" ],
-      "2": [ "DP-3" ],
-      "3": [ "DP-3" ],
-      "4": [ "DP-3" ]
-    }
+    // "persistent-workspaces": {
+    //   "1": [ "DP-3" ],
+    //   "2": [ "DP-3" ],
+    //   "3": [ "DP-3" ],
+    //   "4": [ "DP-3" ]
+    // },
+    "ignore-workspaces": [
+      "(special:)?(HDMI-.*|DP-.*)"
+    ]
   },
   "hyprland/scratchpad": {
     "format": "{icon} {count}",
@@ -105,6 +103,10 @@
     },
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "hyprland/submap": {
+    "format": "󰌒 {} 󰘵",
+    "tooltip": false
   },
   "temperature": {
     // "thermal-zone": 2,

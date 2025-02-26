@@ -1,2 +1,10 @@
 set hidden!
 
+set cleaner ~/.config/lf/lf-cleaner
+set previewer ~/.config/lf/lf-preview
+
+map x quitcd
+cmd quitcd ${{
+	echo "1" > "$LF_TEMPDIR"/cdtolastdir
+	lf -remote "send $id quit"
+}}

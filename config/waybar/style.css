@@ -39,6 +39,16 @@ window#waybar .module {
     background-color: #000000;
 }
 
+window#waybar #submap {
+	color: #000000;
+	background-color: #b8ff3d;
+	padding: 0 30px;
+	font-weight: bold;
+}
+/* window#waybar #submap.mode-select {
+	color: #b8ff3d;
+	background-color: #000000;
+} */
 
 .modules-left {
     margin: 0px 0px;

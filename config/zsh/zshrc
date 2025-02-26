@@ -1,5 +1,19 @@
 #!/bin/zsh
 
+# ENVIRONMENT
+# --------------------
+# export ZSH=$HOME/.oh-my-zsh
+export EDITOR=nvim
+export LANG=en_US.UTF-8
+export TERM=kitty
+export ZSH=$HOME/.zshrc
+
+# VALUES
+# --------------------
+PATH_FULL=$(pwd)
+PATH_USER=/home/$USER
+PATH_CONFIG=$PATH_USER/.config/zsh
+
 # CONFIGS
 # --------------------
 COMPLETION_WAITING_DOTS="true"
@@ -7,23 +21,39 @@ DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false"
 HYPHEN_INSENSITIVE="true"
 
-# ENVIRONMENT
+# HISTORY
 # --------------------
-# export ZSH=$HOME/.oh-my-zsh
-export ZSH=$HOME/.zshrc
-export LANG=en_US.UTF-8
-export TERM=xterm-256color
+HISTFILE=$ZSH_DIR/history
+HISTSIZE=10000000
+SAVEHIST=10000000
 
-# PLUGINS
+# OPTIONS
 # --------------------
-plugins=(
-  git
-  zsh-autosuggestions
-)
+setopt APPEND_HISTORY
+setopt BANG_HIST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+unsetopt autocd
+unsetopt EXTENDED_HISTORY
+unsetopt HIST_IGNORE_ALL_DUPS
+
 
 # SOURCE
 # --------------------
 # source $ZSH/oh-my-zsh.sh
 # source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 # CONDITIONAL
-if [ -e zshiardo.zsh ]; then source zshiardo.zsh; fi
+if [ -e $PATH_USER/.profile ]; then source $PATH_USER/.profile; fi
+if [ -e $PATH_CONFIG/zsh-alias.zsh ]; then source $PATH_CONFIG/zsh-alias.zsh; fi
+if [ -e $PATH_CONFIG/zsh-plugins.zsh ]; then source $PATH_CONFIG/zsh-plugins.zsh; fi
+if [ -e $PATH_CONFIG/zsh-user.zsh ]; then source $PATH_CONFIG/zsh-user.zsh; fi
+if [ -e $PATH_CONFIG/zsh-lf.zsh ]; then source $PATH_CONFIG/zsh-lf.zsh; fi
+if [ -e $PATH_CONFIG/zsh-nix.zsh ]; then source $PATH_CONFIG/zsh-nix.zsh; fi
+if [ -e $PATH_CONFIG/zsh-dev.zsh ]; then source $PATH_CONFIG/zsh-dev.zsh; fi
+# if [ -e $PATH_CONFIG/zsh-nvm.zsh ]; then source $ZSH_DIR/zsh-nvm.zsh; fi

@@ -1,0 +1,41 @@
+anchor=top-right
+background-color=#000000
+border-color=#b8ff3d
+border-radius=0
+border-size=0
+default-timeout=5000
+font=Iosevka Custom 10
+format=<b>%s</b>\n<span color="#b8ff3d"><b>%a 󰘟</b></span>\n%b
+height=110
+history=0
+icon-location=left
+icons=1
+ignore-timeout=0
+layer=overlay
+margin=6
+max-history=10
+max-icon-size=64
+max-visible=10
+outer-margin=6
+padding=10
+progress-color=over #689d6a
+sort=-time
+text-alignment=left
+text-color=#ffffff
+width=240
+
+[urgency=low]
+default-timeout=2000
+background-color=#000000
+
+[urgency=normal]
+default-timeout=5000
+background-color=#000000
+
+[urgency=high]
+default-timeout=0
+background-color=#cc241d
+
+[category=mpd]
+default-timeout=2000
+group-by=category

@@ -1,0 +1,17 @@
+# ignore these folders:
+__pycache__
+plugin
+plugins/*
+
+# ignore these files:
+.init.vim
+.luarc.json
+*.db
+*.txt
+history
+
+# --------------------
+
+# include these folders:
+# include these files:
+!.gitkeep

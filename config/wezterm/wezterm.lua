@@ -8,9 +8,10 @@ config.unix_domains = {
   }
 }
 
+config.audible_bell = "Disabled"
 config.default_prog = { "zsh" }
-config.front_end = "WebGpu"
 config.enable_wayland = false
+config.front_end = "WebGpu"
 config.window_background_opacity = 1.0
 
 return config
