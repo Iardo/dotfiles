@@ -23,8 +23,7 @@ shopt -s histappend
 
 # ---------------------------------------------------------------------------- #
 # INCLUDES
-if [ -e ~/.profile ]; then source ~/.profile; fi
-if [ -e ~/.bashnvm ]; then source ~/.bashnvm; fi
+# if [ -e ~/.bash_nvm ]; then source ~/.bash_nvm; fi
 
 # ---------------------------------------------------------------------------- #
 # ALIAS
@@ -34,4 +33,4 @@ alias cfgeditor="$EDITOR ~/.bashrc"
 
 # ---------------------------------------------------------------------------- #
 # OhMyPosh
-eval "$(oh-my-posh init bash --config ~/.ohmyposh.json)"
+# eval "$(oh-my-posh init bash --config ~/.ohmyposh.json)"
