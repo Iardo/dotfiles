@@ -1,8 +1,13 @@
 #!/bin/bash
-# ~/.bash_logout
+# ~/.bash_out
 
-# Clears duplicates from ~/.bash_history
+# Clear duplicates from ~/.bash_history
 bash_history_file=$(mktemp "$USER"_bash_historyXXXXXX)
 tac "$HOME/.bash_history" | awk '!x[$0]++' | tac >"$bash_history_file"
 mv "$bash_history_file" "$HOME/.bash_history"
 unset bash_history_file
+
+# Clear the screen when leaving the console to increase privacy
+if [ "$SHLVL" = 1 ]; then
+  [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
+fi

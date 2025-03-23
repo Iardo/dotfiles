@@ -1,1 +1,22 @@
-if [ -d "/opt/dstask/0.27" ]; then PATH="/opt/dstask/0.27:$PATH"; fi
+#!/bin/bash
+# ~/.bash_opt
+
+opt_list=(
+  "/home/iardo/.deno/env"
+  "/opt/android-studio/bin"
+  "/opt/dstask/0.27"
+  "/opt/fastfetch/2.36.0"
+  "/opt/flutter/3.27.4"
+  "/opt/go/1.23.5"
+  "/opt/godot/4.3"
+  "/opt/lazygit/0.46.0"
+  "/opt/lite-xl/2.1.7"
+  "/opt/love/11.5"
+  "/opt/lua/5.4.2/bin"
+  "/opt/nvim/0.10.3/bin"
+)
+
+for item in ${opt_list[@]}
+do
+  PATH="$item:$PATH"
+done

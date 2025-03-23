@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.bashiardo
+# ~/.bash_cfg
 
 # PROMPT
 #PS1="\[${color_red}\]\u\[${color_reset}\]"        # User
@@ -22,8 +22,10 @@ shopt -s checkwinsize
 shopt -s histappend
 
 # ---------------------------------------------------------------------------- #
-# INCLUDES
-# if [ -e ~/.bash_nvm ]; then source ~/.bash_nvm; fi
+# TERM
+case "$TERM" in
+  xterm-color|*-256color) color_prompt=yes;;
+esac
 
 # ---------------------------------------------------------------------------- #
 # ALIAS
