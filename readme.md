@@ -12,20 +12,10 @@
 
 This repo contains backups of my configuration files for my linux, mac and windows machines. It also include preparation scripts for linux/macos and windows whos main reason is to download my <a href="https://github.com/Iardo/dotinstaller-cli">dotfiles-installer</a> binary in order to automate the copy/setup process.
 
-## Project Structure:
+## Installation:
 
-```
-Root
-├── cfg           | Metadata about the files that is meant to be consumed by other aplications in order to automate some tasks
-├── res
-│   ├── configs   | Base configuration files for applications
-│   ├── fonts     | Base typographic resources AKA fonts
-│   ├── user      | Base ~user configuration files
-│   └── themes    | Themes for different applications
-├── .gitignore
-├── LICENCE.md
-├── README.es.md  | This file but in spanish
-└── README.md     | This file
+```bash
+git lfs pull
 ```
 
 ## Licence:

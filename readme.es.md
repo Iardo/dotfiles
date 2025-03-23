@@ -12,20 +12,10 @@
 
 Este repositorio contiene copias de seguridad de mis archivos de configuración para mis máquinas Linux, Mac y Windows. Tambien incluye scripts de preparacion cuya funcion principal es descargar el binario de mi repo <a href="https://github.com/Iardo/dotinstaller-cli">dotfiles-installer</a> en orden de falicitar el proceso de copia/instalacion.
 
-## Estructura del Proyecto:
+## Instalacion:
 
-```
-Root
-├── cfg           | Metadatos acerca de los archivos de configuracion pensados para ser consumidos por otras aplicaciones en funcion de realizar tareas de automatizacion
-├── res
-│   ├── configs   | Archivos base de configuracion
-│   ├── fonts     | Archivos base de fuentes tipograficas o fonts
-│   ├── user      | Archivos base de ~user
-│   └── themes    | Temas para distintas aplicaciones
-├── .gitignore
-├── LICENCE.md
-├── README.es.md  | Este archivo
-└── README.md     | Este archivo, pero en Inglés
+```bash
+git lfs pull
 ```
 
 ## Licencia:
