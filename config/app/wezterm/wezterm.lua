@@ -8,16 +8,22 @@ local config = wezterm.config_builder()
 --   }
 -- }
 
-config.audible_bell = "Disabled"
--- config.default_prog = { "zsh" }
--- config.enable_wayland = false
--- config.front_end = "WebGpu"
-config.window_background_opacity = 1.0
-config.window_padding = {
-  left = 2,
-  right = 2,
-  top = 0,
-  bottom = 0,
+config = {
+	audible_bell = "Disabled"
+	-- default_prog = { "zsh" }
+	-- enable_wayland = false
+	-- front_end = "WebGpu"
+	visual_bell = {
+                fade_in_duration_ms = 0,
+  		fade_out_duration_ms = 0,
+	},
+	window_background_opacity = 1.0
+	window_padding = {
+  		left = '1cell',
+  		right = '1cell',
+  		top = 0,
+		bottom = 0,
+	},	
 }
 
 return config
