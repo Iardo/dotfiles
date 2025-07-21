@@ -1,8 +1,8 @@
 [user]
 	name   = Ivan Ramos
 	email  = iardoru@gmail.com
-	editor = "nvim"
 [core]
+	editor = "nvim"
 	excludesfile = /home/iardo/.gitignore_global
 	excludesfile = /Users/iardo/.gitignore_global
 [alias]
