@@ -50,7 +50,7 @@ alias dkrm='docker rm'
 alias dkflush='docker rm `docker ps --no-trunc -aq`'
 alias dkflushforce='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias dkt='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
-alias dkps='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"'
+alias dkps='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}" | (read -r; printf "%s\n" "$REPLY"; sort -k 1)'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
