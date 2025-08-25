@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "border": true,
+  "border_width": 1,
+  "border_offset": -1,
+  "default_workspace_padding": 1,
+  "default_container_padding": 1,
+  "theme": {
+    "palette": "Catppuccin",
+    "name": "Mocha",
+    "bar_accent": "Text",
+    "unfocused_border": "Text"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "Home",
+          "layout": "VerticalStack"
+        }
+      ]
+    }
+  ]
+}
