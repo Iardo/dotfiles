@@ -17,7 +17,23 @@
     {
       "workspaces": [
         {
-          "name": "Home",
+          "name": "media",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "main",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "code",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "debug",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "chat",
           "layout": "VerticalStack"
         }
       ]
