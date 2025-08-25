@@ -1,419 +1,507 @@
-/* ===================== */
-/* === COLOR VARIABLES === */
-/* ===================== */
 :root {
-    /* Catppuccin Mocha color palette */
-    --rosewater: #f5e0dc;
-    --flamingo: #f2cdcd;
-    --pink: #f5c2e7;
-    --mauve: #cba6f7;
-    --red: #f38ba8;
-    --maroon: #eba0ac;
-    --peach: #fab387;
-    --yellow: #f9e2af;
-    --green: #a6e3a1;
-    --teal: #94e2d5;
-    --sky: #89dceb;
-    --sapphire: #74c7ec;
-    --blue: #89b4fa;
-    --lavender: #b4befe;
-    --green-bright: #b8ff3d;
-    --white: #ffffff;
+  --red: #f38ba8;
+  --green: #b8ff3d;
+  --white: #ffffff;
+  --black: #000000;
 
-/* Text colors */
-    --text: #cdd6f4;
-    --subtext1: #bac2de;
-    --subtext0: #a6adc8;
-
-/* Overlay colors */
-    --overlay2: #9399b2;
-    --overlay1: #7f849c;
-    --overlay0: #6c7086;
-
-/* Surface colors */
-    --surface2: #585b70;
-    --surface1: #45475a;
-    --surface0: #282936;
-
-/* Base colors */
-    --base: #1e1e2e;
-    --mantle: rgba(24, 24, 37, 0.5);
-    --crust: rgba(17, 17, 27, 0.75);
+  --base: #000000;
+  --text: #ffffff;
+  --subtext: #bac2de;
+  --overlay1: #9399b2;
+  --overlay2: rgba(255, 255, 255, 0.2);
+  --flashing: rgba(255, 106, 106, 0.63);
 }
 
-/* ================= */
-/* === BASE STYLES === */
-/* ================= */
 * {
-    font-size: 12px;
-    color: var(--subtext0);
-    font-weight: 700;
-    font-family: "JetBrainsMono NFP";
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "JetBrainsMono NFP";
+  font-weight: 700;
+  color: var(--text);
 }
 
-/* ================= */
-/* === BAR LAYOUT === */
-/* ================= */
+/* Theme
+ * --------------------
+ * 
+ * Yasb
+ * ----
+ */
 .yasb-bar {
-    padding: 0;
-    margin: 0;
-    background-color: var(--crust);
+  padding: 0;
+  margin: 0;
+  background-color: var(--black);
 }
 
-/* Common widget styles */
-.widget {
-    padding: 0 8px;
-    margin: 0 2px;
-}
-
-.widget .label {
-    padding: 0px 2px;
-}
-
-.widget .label.alt {
-    padding: 0px 2px;
-}
-
+/* Widget
+ * ----
+ */
 .icon {
-    font-size: 16px;
-    margin: 0 4px 0 0;
+  margin: 0 4px 0 0;
+  font-size: 12px;
+}
+.widget {
+  padding: 0 8px;
+}
+.widget .label {
+  padding: 0px 2px;
+}
+.widget .label.alt {
+  padding: 0px 2px;
 }
 
-/* ==================== */
-/* === POWER MENU === */
-/* ==================== */
-.power-menu-widget .label {
-    color: var(--red);
-    font-size: 13px;
+
+/* Active Window
+ * ----
+ */
+.active-window-widget {
+  margin-left: 0;
+  padding-left: 8px;
 }
+.active-window-widget .widget-container {}
+.active-window-widget .widget-container .label {}
+.active-window-widget .widget-container .label.alt {}
+.active-window-widget .widget-container .icon {}
 
-.power-menu-popup {
-    background-color: var(--base);
+
+/* Applications
+ * ----
+ */
+.apps-widget {
+  margin: 0;
+  border: 2px solid transparent;
+  border-left-color: var(--subtext);
 }
-
-.power-menu-popup .button {
-    padding: 0;
-    width: 180px;
-    height: 230px;
-    border-radius: 8px;
-    background-color: var(--base);
-    border: 8px solid rgba(58, 59, 83, 0);
-    margin: 0px;
-}
-
-.power-menu-popup .button.hover {
-    background-color: var(--surface0);
-    border: 8px solid var(--surface0);
-}
-
-.power-menu-popup .button .label {
-    margin-bottom: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--lavender);
-}
-
-.power-menu-popup .button .icon {
-    font-size: 64px;
-    padding-top: 32px;
-    color: var(--lavender);
-}
-
-/* Cancel button specific styles */
-.power-menu-popup .button.cancel {
-    height: 32px;
-    border-radius: 4px;
-}
-
-.power-menu-popup .button.cancel .icon {
-    padding: 0;
-    margin: 0;
-}
-
-.power-menu-popup .button.cancel .label {
-    color: var(--red);
-    margin: 0;
-}
-
-/* ==================== */
-/* === VOLUME WIDGET === */
-/* ==================== */
-.volume-widget .icon {
-    color: var(--blue);
-    margin: 1px 2px 0 0;
-}
-
-/* Audio dropdown menu */
-.audio-menu {
-    background-color: var(--mantle);
-}
-
-.audio-container .device {
-    font-size: 20px;
-    background-color: var(--base);
-    border: none;
-    padding: 6px 8px 6px 4px;
-    margin: 2px 0;
-    font-size: 12px;
-    border-radius: 4px;
-}
-
-.audio-container .device.selected {
-    background-color: rgba(255, 255, 255, 0.085);
-}
-
-.audio-container .device:hover {
-    background-color: rgba(255, 255, 255, 0.06);
-}
-
-/* ================= */
-/* === DISK WIDGET === */
-/* ================= */
-.disk-widget .icon {
-    color: var(--teal);
-}
-
-/* Disk dropdown */
-.disk-group {
-    background-color: var(--mantle);
-}
-
-.disk-group-row {
-    min-width: 220px;
-    max-width: 220px;
-    max-height: 40px;
-    margin: 0;
-    padding: 0;
-    border-radius: 6px;
-    border: 1px solid var(--base);
-}
-
-.disk-group-row:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.disk-group-label-bar {
-    max-height: 8px;
-    border: 0;
-    background-color: rgba(148, 226, 213, 0.3);
-    border-radius: 4px;
-}
-
-.disk-group-label-bar::chunk {
-    background-color: var(--teal);
-    border-radius: 4px;
-}
-
-.disk-group-label {
-    font-size: 13px;
-}
-
-.disk-group-label-size {
-    font-size: 12px;
-    color: rgba(205, 214, 244, 0.5);
-}
-
-/* ================= */
-/* === CLOCK WIDGET === */
-/* ================= */
-.clock-widget {
-    background-color: var(--crust);
-    margin: 4px 0;
-    border-radius: 12px;
-    border: 0;
-}
-
-.clock-widget .icon {
-    font-size: 14px;
-    color: var(--sky)
-}
-
-.clock-widget .label {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--subtext0);
-}
-
-/* Calendar dropdown */
-.calendar {
-    background-color: var(--mantle);
-}
-
-.calendar .calendar-table,
-.calendar .calendar-table::item {
-    background-color: var(--base);
-    color: rgba(162, 177, 196, 0.85);
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-}
-
-.calendar .calendar-table::item:selected {
-    color: var(--crust);
-    background-color: var(--green-bright);
-    /* border-radius: 5px; */
-}
-
-.calendar .day-label {
-    margin-top: 20px;
-}
-
-.calendar .day-label,
-.calendar .month-label,
-.calendar .date-label {
-    font-size: 16px;
-    color: var(--white);
-    font-weight: 700;
-    min-width: 180px;
-    max-width: 180px;
-}
-
-.calendar .month-label {
-    font-weight: normal;
-}
-
-.calendar .date-label {
-    font-size: 88px;
-    font-weight: 900;
-    color: rgb(255, 255, 255);
-    margin-top: -20px;
-}
-
-/* ==================== */
-/* === WEATHER WIDGET === */
-/* ==================== */
-.weather-widget .icon {
-    font-size: 20px;
-    margin: 0 2px 1px 0;
-    color: var(--maroon);
-}
-
-.weather-card {
-    background-color: var(--mantle);
-}
-
-/* ====================== */
-/* === WORKSPACE WIDGET === */
-/* ====================== */
-.glazewm-workspaces {
-    background-color: var(--crust);
-    margin: 4px 0;
-    border-radius: 12px;
-    border: 0;
-}
-
-.glazewm-workspaces .ws-btn {
-    font-size: 14px;
-    border: none;
-    color: var(--overlay0);
-    padding: 0 6px;
-    cursor: pointer;
-}
-
-.glazewm-workspaces .ws-btn.active_populated,
-.glazewm-workspaces .ws-btn.active_empty {
-    color: var(--red);
-    font-weight: 900;
-}
-
-/* ====================== */
-/* === KOMOREBI WORKSPACE WIDGET === */
-/* ====================== */
+.apps-widget .widget-container {}
+.apps-widget .widget-container .label {} 
 
 
-.komorebi-workspaces {
-    background-color: var(--crust);
-    margin: 4px 0;
-    border-radius: 12px;
-    border: 0;
-}
-
-.komorebi-workspaces .ws-btn {
-    font-size: 14px;
-    border: none;
-    color: var(--overlay0);
-    padding: 0 6px;
-    cursor: pointer;
-}
-
-.komorebi-workspaces .ws-btn.active
-{
-    color: var(--red);
-    font-weight: 900;
-}
-.komorebi-workspaces .ws-btn.ws-btn.active_empty {
-    color: var(--blue);
-    font-weight: 900;
-}
-
-/* ================= */
-/* === WIFI WIDGET === */
-/* ================= */
-.wifi-widget .icon {
-    color: var(--yellow);
-}
-
-/* ===================== */
-/* === BATTERY WIDGET === */
-/* ===================== */
+/* Battery
+ * ----
+ */
 .battery-widget .icon {
-    color: var(--flamingo);
-}
-
-/* ==================== */
-/* === MEMORY WIDGET === */
-/* ==================== */
-.memory-widget .icon {
-    color: var(--mauve);
-}
-
-/* ================= */
-/* === UPTIME WIDGET === */
-/* ================= */
-.uptime {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: var(--surface2);
-    font-weight: 600;
-}
-
-/* ================= */
-/* === HOME WIDGET === */
-/* ================= */
-.home-widget {
-    padding: 0 4px 0 12px;
-}
-
-.home-widget .icon {
-    font-size: 18px;
-    color: var(--subtext1);
-}
-
-.home-menu {
-    background-color: var(--mantle);
-    padding: 0;
-    margin-left: 2px;
-}
-
-.home-menu .menu-item {
-    padding: 8px 48px 8px 12px;
-    font-weight: 600;
     color: var(--text);
 }
 
-.home-menu .menu-item:hover {
-    background-color: var(--lavender);
-    color: var(--surface0);
-    margin: 4px 6px;
-    border-radius: 4px;
+
+/* Bluetooth
+ * ----
+ */
+.bluetooth-widget {}
+.bluetooth-widget .widget-container {}
+.bluetooth-widget .label {}
+.bluetooth-widget .label.alt {}
+.bluetooth-widget .icon {}
+
+
+/* Clock
+ * ----
+ */
+.clock-widget {
+  margin: 4px 0;
+  border: 0;
+  background-color: transparent;
+}
+.clock-widget .icon {
+  font-size: 12px;
+  color: var(--white)
+}
+.clock-widget .label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+.calendar {
+  background-color: var(--black);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+  margin: 0;
+  padding: 0;
+  color: var(--subtext);
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.calendar .calendar-table::item:selected {
+  color: var(--black);
+  background-color: var(--green);
+}
+.calendar .day-label {
+  margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+  min-width: 180px;
+  max-width: 180px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+.calendar .month-label {
+  font-weight: normal;
+}
+.calendar .date-label {
+  margin-top: -20px;
+  font-size: 88px;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
 }
 
+
+/* Disk
+ * ----
+ */
+.disk-widget .icon {
+  font-size: 12px;
+  color: var(--text);
+}
+.disk-group {
+  background-color: var(--base);
+}
+.disk-group-row {
+  margin: 0;
+  padding: 0;
+  min-width: 220px;
+  max-width: 220px;
+  max-height: 40px;
+  border: 1px solid var(--base);
+}
+.disk-group-row:hover {
+  border: 1px solid var(--overlay2);
+  background-color: var(--overlay2);
+}
+.disk-group-label {
+  font-size: 13px;
+}
+.disk-group-label-size {
+  font-size: 12px;
+  color: var(--text);
+}
+.disk-group-label-bar {
+  max-height: 8px;
+  border: 0;
+  background-color: var(--overlay1);
+}
+.disk-group-label-bar::chunk {
+  background-color: var(--green);
+}
+
+
+/* Glazewm Workspaces
+ * ----
+ */
+.glazewm-workspaces {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--base);
+}
+.glazewm-workspaces .ws-btn {
+  padding: 0 6px;
+  font-size: 14px;
+  border: none;
+  color: var(--overlay1);
+  cursor: pointer;
+}
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
+  font-weight: 900;
+  color: var(--green);
+}
+
+
+/* Home
+ * ----
+ */
+.home-widget {
+  padding: 0 4px 0 12px;
+}
+.home-widget .icon {
+  font-size: 18px;
+  color: var(--overlay1);
+}
+.home-menu {
+  margin-left: 2px;
+  background-color: var(--base);
+}
+.home-menu .menu-item {
+  padding: 4px 48px 4px 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.home-menu .menu-item:hover {
+  margin: 0 6px;
+  color: var(--text);
+  background-color: var(--overlay2);
+}
 .home-menu .separator {
-    max-height: 1px;
-    background-color: var(--overlay0);
-    margin: 0 8px;
+  margin: 0 6px;
+  max-height: 1px;
+  background-color: var(--overlay2);
+}
+
+
+/* Komorebi Workspaces
+ * ----
+ */
+.komorebi-workspaces {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--base);
+}
+.komorebi-workspaces .widget-container {
+  margin: 0;
+  padding: 0;
+}
+.komorebi-workspaces .ws-btn {
+  margin: 0;
+  padding: 0 6px;
+  height: 100%;
+  font-size: 12px;
+  border: none;
+  color: var(--overlay1);
+  cursor: pointer;
+}
+.komorebi-workspaces .ws-btn:hover {
+  background-color: var(--overlay2);
+}
+.komorebi-workspaces .ws-btn.active {
+  font-weight: 900;
+  color: var(--green);
+}
+.komorebi-workspaces .ws-btn.ws-btn.active_empty {
+  font-weight: 900;
+  color: var(--text);
+}
+
+
+/* Language
+ * ----
+ */
+.language-widget {}
+.language-widget .widget-container {}
+.language-widget .label {}
+.language-widget .label.alt {}
+.language-widget .icon {}
+.language-menu {
+  min-width: 300px;
+  background-color: var(--base);
+}
+.language-menu .header {
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--overlay2);
+  background-color: var(--base);
+}
+.language-menu .footer {
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9399b2;
+  border-top: 1px var(--overlay1);
+  background-color: var(--base);
+}
+.language-menu .footer:hover {
+  color: var(--text);
+  background-color: var(--overlay2);
+}
+.language-menu .language-item {
+  margin: 2px 4px;
+  padding: 6px 12px;
+}
+.language-menu .language-item.active {
+  background-color: var(--overlay2);
+}
+.language-menu .language-item:hover {
+  background-color: var(--overlay2);
+}
+.language-menu .language-item.active:hover {
+  background-color: var(--overlay2);
+}
+.language-menu .language-item .code {
+  min-width: 40px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.language-menu .language-item .icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: var(--text);
+}
+.language-menu .language-item .name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.language-menu .language-item .layout {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* Memory
+ * ----
+ */
+.memory-widget .icon {
+    font-size: 12px;
+    color: var(--text);
+}
+
+
+/* Power Menu
+ * ----
+ */
+.power-menu-widget .label {
+  font-size: 13px;
+  color: var(--red);
+}
+.power-menu-popup {
+  background-color: var(--base);
+}
+.power-menu-popup .button {
+  margin: 0px;
+  padding: 0;
+  width: 180px;
+  height: 230px;
+  border: 4px solid var(--overlay2);
+  background-color: var(--base);
+}
+.power-menu-popup .button.hover {
+  border: 4px solid var(--flashing);
+  background-color: var(--flashing);
+}
+.power-menu-popup .button .label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+.power-menu-popup .button .icon {
+  font-size: 64px;
+  padding-top: 32px;
+  color: var(--text);
+}
+.power-menu-popup .button.cancel {
+  height: 32px;
+}
+.power-menu-popup .button.cancel .icon {
+  padding: 0;
+  margin: 0;
+}
+.power-menu-popup .button.cancel .label {
+  margin: 0;
+  color: var(--red);
+}
+
+
+/* Systray
+ * ----
+ */
+.systray {
+  margin: 0;
+  border: none;
+  background: transparent;
+}
+.systray .unpinned-container {
+  background: transparent;
+}
+.systray .pinned-container {
+  background: transparent;
+}
+.systray .pinned-container[forceshow=true] {}
+.systray .button {
+  padding: 2px 2px;
+  background: transparent;
+}
+.systray .button:hover {
+  background: var(--overlay2);
+}
+.systray .button[dragging=true] {
+  background: var(--flashing);
+}
+.systray .unpinned-visibility-btn {
+  width: 16px;
+  height: 20px;
+  background: transparent;
+}
+.systray .unpinned-visibility-btn:checked {
+  background: transparent;
+}
+.systray .unpinned-visibility-btn:hover {}
+
+
+/* Taskbar
+ * ----
+ */
+.taskbar-widget {
+  padding: -2px 0;
+  border: 2px solid transparent;
+  border-left-color: var(--subtext);
+  border-right-color: var(--subtext);
+}
+.taskbar-widget .widget-container {}
+.taskbar-widget .app-container {
+  padding: 0 6px;
+}
+.taskbar-widget .app-container.foreground {
+  background-color: var(--overlay2);
+}
+.taskbar-widget .app-container.flashing {
+  background-color: var(--flashing);
+}
+.taskbar-widget .app-container .app-icon {}
+.taskbar-widget .app-container .app-title {
+  padding-left: 4px;
+}
+
+
+/* Uptime
+ * ----
+ */
+.uptime {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+
+/* Volume
+ * ----
+ */
+.volume-widget .icon {
+  font-size: 12px;
+  color: var(--white);
+}
+/* Audio dropdown menu */
+.audio-menu {
+  background-color: var(--base);
+}
+.audio-container .device {
+  font-size: 20px;
+  background-color: var(--base);
+  border: none;
+  padding: 6px 8px 6px 4px;
+  margin: 2px 0;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.audio-container .device.selected {
+  background-color: var(--overlay2);
+}
+.audio-container .device:hover {
+  background-color: var(--overlay2);
+}
+
+
+/* Wifi
+ * ----
+ */
+.wifi-widget .icon {
+  font-size: 12px;
+  color: var(--text);
 }
