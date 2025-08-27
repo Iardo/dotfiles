@@ -33,6 +33,73 @@
   background-color: var(--black);
 }
 
+
+/* Context-Menu
+ * ----
+ */
+.context-menu,
+.context-menu .menu-checkbox {
+    border: none;
+    background-color: var(--base);
+}
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+    padding: 4px 12px;
+    min-width: 120px;
+    background-color: transparent;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: var(--overlay2);
+}
+.context-menu::separator {
+    margin: 0 8px;
+    height: 1px;
+    background-color: var(--overlay2);
+}
+.context-menu::item:disabled {
+    color: var(--overlay2);
+    background-color: transparent;
+}
+.context-menu .menu-checkbox .checkbox {
+    margin: 0;
+    padding: 4px 0 4px 16px;
+    border: none;
+}
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--overlay2);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+    margin-left: 0px;
+    margin-right: 4px;
+    width: 8px;
+    height: 8px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--overlay2);
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    border-radius: 2px;
+    background: var(--green);
+}
+.context-menu .menu-checkbox .checkbox:focus {
+    outline: none;
+}
+.context-menu::item:checked {
+    color: white;
+    background-color: var(--green);
+}
+
+
 /* Widget
  * ----
  */

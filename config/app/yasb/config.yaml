@@ -32,8 +32,8 @@ bars:
       right: 0
     widgets:
       left: ["home", "glazewm_workspaces", "komorebi_workspaces", "apps", "taskbar", "active_window"]
-      center: ["clock"]
-      right: ["disk", "volume", "language", "bluetooth", "systray", "wifi", "power_menu"]
+      center: []
+      right: ["disk", "volume", "clock", "language", "bluetooth", "systray", "wifi", "power_menu"]
 widgets:
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
@@ -52,6 +52,7 @@ widgets:
       label: "{data}"
       app_list:
         - {icon: "󰝰", launch: "explorer"}
+        - {icon: "", launch: "start chrome"}
         - {icon: "\uf489", launch: "wezterm"}
       label_shadow:
         enabled: true
@@ -177,8 +178,8 @@ widgets:
       label_workspace_populated_btn: "{name}"
       label_default_name: ""
       label_zero_index: false
-      hide_empty_workspaces: false
-      hide_if_offline: false
+      hide_empty_workspaces: true
+      hide_if_offline: true
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -235,9 +236,9 @@ widgets:
       class_name: "systray"
       label_collapsed: "󰅀"
       label_expanded: "󰅂"
-      label_position: "left" # Can be "left" or "right"
-      icon_size: 12 # Can be any integer between 8 and 64
-      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      label_position: "left"
+      icon_size: 12
+      pin_click_modifier: "alt"
       show_unpinned: false
       show_unpinned_button: true
       show_battery: false
