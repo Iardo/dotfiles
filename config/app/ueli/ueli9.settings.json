@@ -1,0 +1,16 @@
+{
+    "appearance.searchBarAppearance": "filled-darker",
+    "appearance.searchBarSize": "medium",
+    "appearance.searchResultListLayout": "compact",
+    "appearance.themeName": "Fluent UI Web",
+    "appearance.themeSource": "dark",
+    "general.browser.useDefaultWebBrowser": true,
+    "general.hotkey": "Ctrl+Alt+W",
+    "general.hotkey.enabled": true,
+    "general.preserveUserInput": false,
+    "searchEngine.automaticRescan": false,
+    "window.alwaysOnTop": false,
+    "window.backgroundMaterial": "None",
+    "window.scrollBehavior": "instant",
+    "window.showOnStartup": false
+}
