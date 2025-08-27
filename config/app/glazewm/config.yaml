@@ -1,5 +1,5 @@
 general:
-  focus_follows_cursor: true
+  focus_follows_cursor: false
   toggle_workspace_on_refocus: false
   hide_method: 'cloak'
   cursor_jump:
@@ -68,19 +68,45 @@ workspaces:
     display_name: 'chat'
     keep_alive: true
 window_rules:
+  - commands: ['move --workspace 1', 'set-tiling-direction horizontal']
+    match:
+      - window_process: { equals: 'mpc-hc64' }                        # Media Player Classic
+        window_class:   { equals: 'MediaPlayerClassicW' }             # Media Player Classic
+      - window_process: { regex: 'mpv' }                              # MPV
+  - commands: ['move --workspace 2']
+    match:
+      - window_process: { equals: 'chrome' }                          # Chrome
+        window_class:   { regex: 'Chrome_WidgetWin_1' }               # Chrome
+      - window_process: { regex: 'msedge' }                           # Edge
+      - window_process: { regex: 'opera' }                            # Opera
+  - commands: ['move --workspace 3']
+    match:
+      - window_process: { equals: 'code' }                            # VSCode
+        window_class:   { regex: 'Chrome_WidgetWin_1' }               # VSCode
+      - window_process: { regex: 'wezterm-gui' }                      # Wezterm
+        window_class:   { regex: 'org.wezfurlong.wezterm' }           # Wezterm
   - commands: ['ignore']
     match:
-      - window_title:   { regex: '[Pp]icture.in.[Pp]icture' }
+      - window_process: { equals: 'Lively' }                          # Lively
+        window_class:   { regex: 'HwndWrapper' }                      # Lively
+      - window_title:   { regex: '[Pp]icture.in.[Pp]icture' }         # Picture-in-Picture
         window_class:   { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
-      - window_process: { equals: 'Lively' }
-        window_class:   { regex: 'HwndWrapper' }
-      - window_process: { equals: 'PowerToys' }
+      - window_process: { equals: 'PowerToys' }                       # PowerToys
         window_class:   { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
-      - window_process: { equals: 'PowerToys' }
-        window_title:   { regex: '.*? - Peek' }
-      - window_process: { regex: '[Tt]askmgr' }
-        window_class:   { regex: 'TaskManagerWindow' }
-      - window_process: { equals: 'zebar' }
+      - window_process: { equals: 'PowerToys' }                       # PowerToys
+        window_title:   { regex: '.*? - Peek' }                       # PowerToys
+      - window_process: { equals: 'QuickLook' }                       # Quick Look
+        window_class:   { regex: 'HwndWrapper\[QuickLook.*?\]' }      # Quick Look
+      - window_process: { equals: 'SystemSettings' }                  # System Config
+      - window_process: { regex: 'ApplicationFrameHost|explorer' }    # System Config
+        window_class:   { regex: 'ApplicationFrameWindow' }           # System Config
+      - window_process: { regex: '[Tt]askmgr' }                       # Task Manager
+        window_class:   { regex: 'TaskManagerWindow' }                # Task Manager
+      - window_process: { equals: 'Ueli' }                            # Ueli
+        window_class:   { equals: 'Chrome_WidgetWin_1' }              # Ueli
+      - window_process: { equals: 'yasb' }                            # Yasb
+      - window_process: { equals: 'zebar' }                           # Zebar
+
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
   - name: 'resize'
