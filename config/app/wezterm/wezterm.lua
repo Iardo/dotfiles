@@ -9,6 +9,15 @@ local config = wezterm.config_builder()
 -- }
 
 config = {
+    default_prog = { 'powershell.exe', '-NoLogo' },
+    -- launch_menu = {
+    --     { label = "PowerShell 7",         args = { "pwsh.exe" } },
+    --     { label = "PowerShell 7 (Admin)", args = { "pwsh.exe" } },
+    --     { label = "Git Bash",             args = { "C:\\Program Files\\Git\\bin\\bash.exe", "-l" } },
+    --     { label = "Windows PowerShell",   args = { "powershell.exe" } },
+    --     { label = "CMD",                  args = { "cmd.exe" } },
+    -- },
+
 	audible_bell = "Disabled",
 	-- default_prog = { "zsh" }
 	-- enable_wayland = false
