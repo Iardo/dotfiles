@@ -68,7 +68,7 @@ workspaces:
     display_name: 'chat'
     keep_alive: true
 window_rules:
-  - commands: ['move --workspace 1', 'set-tiling-direction horizontal']
+  - commands: ['move --workspace 1', 'set-fullscreen']
     match:
       - window_process: { equals: 'mpc-hc64' }                        # Media Player Classic
         window_class:   { equals: 'MediaPlayerClassicW' }             # Media Player Classic
@@ -81,12 +81,14 @@ window_rules:
       - window_process: { regex: 'opera' }                            # Opera
   - commands: ['move --workspace 3']
     match:
-      - window_process: { equals: 'code' }                            # VSCode
-        window_class:   { regex: 'Chrome_WidgetWin_1' }               # VSCode
+      - window_process: { equals: 'Code' }                            # VSCode
+        window_class:   { equals: 'Chrome_WidgetWin_1' }              # VSCode
       - window_process: { regex: 'wezterm-gui' }                      # Wezterm
         window_class:   { regex: 'org.wezfurlong.wezterm' }           # Wezterm
   - commands: ['ignore']
     match:
+      - window_process: { equals: 'fdm' }                             # Free Download Manager
+        window_class:   { regex: 'Qt682QWindowIcon' }                 # Free Download Manager
       - window_process: { equals: 'Lively' }                          # Lively
         window_class:   { regex: 'HwndWrapper' }                      # Lively
       - window_title:   { regex: '[Pp]icture.in.[Pp]icture' }         # Picture-in-Picture
