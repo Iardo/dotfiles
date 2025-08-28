@@ -7,7 +7,7 @@ plugins/*
 .init.vim
 .luarc.json
 *.db
-*.log
+*.log*
 *.txt
 history
 
