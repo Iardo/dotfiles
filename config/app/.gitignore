@@ -1,7 +1,9 @@
 # ignore these folders:
 __pycache__
-plugin
-plugins/*
+lite-xl/colors/*
+lite-xl/ws
+lite-xl/font_cache.lua
+lite-xl/user_settings.lua
 
 # ignore these files:
 .init.vim
@@ -10,6 +12,7 @@ plugins/*
 *.log*
 *.txt
 history
+session.lua
 
 # --------------------
 
