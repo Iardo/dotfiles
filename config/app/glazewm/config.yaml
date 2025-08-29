@@ -1,5 +1,5 @@
 general:
-  focus_follows_cursor: false
+  focus_follows_cursor: true
   toggle_workspace_on_refocus: false
   hide_method: 'cloak'
   cursor_jump:
@@ -99,6 +99,8 @@ window_rules:
         window_title:   { regex: '.*? - Peek' }                       # PowerToys
       - window_process: { equals: 'QuickLook' }                       # Quick Look
         window_class:   { regex: 'HwndWrapper\[QuickLook.*?\]' }      # Quick Look
+      - window_process: { regex: 'SnippingTool' }                     # Snipping Tool
+        window_class:   { regex: 'Microsoft-Windows-SnipperToolbar' } # Snipping Tool
       - window_process: { equals: 'SystemSettings' }                  # System Config
       - window_process: { regex: 'ApplicationFrameHost|explorer' }    # System Config
         window_class:   { regex: 'ApplicationFrameWindow' }           # System Config
