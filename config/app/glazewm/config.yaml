@@ -81,6 +81,8 @@ window_rules:
       - window_process: { regex: 'opera' }                            # Opera
   - commands: ['move --workspace 3']
     match:
+      - window_process: { equals: 'lite-xl' }                         # Lite-XL
+        window_class:   { equals: 'SDL_app' }                         # Lite-XL
       - window_process: { equals: 'Code' }                            # VSCode
         window_class:   { equals: 'Chrome_WidgetWin_1' }              # VSCode
       - window_process: { regex: 'wezterm-gui' }                      # Wezterm
