@@ -1,4 +1,6 @@
 # ignore these folders:
+.vs
+
 # ignore these files:
 .ds_store
 .uuid
