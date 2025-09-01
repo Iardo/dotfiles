@@ -5,7 +5,7 @@ general:
   cursor_jump:
     enabled: false
     trigger: 'monitor_focus'
-  startup_commands: ['glazewm command focus --workspace 2']
+  startup_commands: ['focus --workspace 2']
   # shutdown_commands: ['']
   config_reload_commands: []
   show_all_in_taskbar: false
