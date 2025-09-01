@@ -5,8 +5,8 @@ general:
   cursor_jump:
     enabled: false
     trigger: 'monitor_focus'
-  # startup_commands: ['shell-exec zebar']
-  # shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
+  startup_commands: ['glazewm command focus --workspace 2']
+  # shutdown_commands: ['']
   config_reload_commands: []
   show_all_in_taskbar: false
 gaps:
