@@ -1,5 +1,5 @@
 general:
-  focus_follows_cursor: true
+  focus_follows_cursor: false
   toggle_workspace_on_refocus: false
   hide_method: 'cloak'
   cursor_jump:
@@ -83,10 +83,16 @@ window_rules:
     match:
       - window_process: { equals: 'lite-xl' }                         # Lite-XL
         window_class:   { equals: 'SDL_app' }                         # Lite-XL
+      - window_process: { equals: 'devenv' }                          # Visual Studio
+        window_class:   { regex: 'HwndWrapper\[DefaultDomain.*?\]' }  # Visual Studio
       - window_process: { equals: 'Code' }                            # VSCode
         window_class:   { equals: 'Chrome_WidgetWin_1' }              # VSCode
       - window_process: { regex: 'wezterm-gui' }                      # Wezterm
         window_class:   { regex: 'org.wezfurlong.wezterm' }           # Wezterm
+  - commands: ['set-tiling']
+    match:
+      - window_process: { equals: 'devenv' }                          # Visual Studio
+        window_class:   { regex: 'HwndWrapper\[DefaultDomain.*?\]' }  # Visual Studio
   - commands: ['ignore']
     match:
       - window_process: { equals: 'fdm' }                             # Free Download Manager
