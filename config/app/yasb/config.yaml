@@ -264,6 +264,8 @@ widgets:
         processes: []
         titles: []
         classes: []
+      callbacks:
+        on_middle: "close_app"
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
