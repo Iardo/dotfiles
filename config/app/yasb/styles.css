@@ -3,6 +3,7 @@
   --green: #b8ff3d;
   --white: #ffffff;
   --black: #000000;
+  --gray: #17171a;
 
   --base: #000000;
   --text: #ffffff;
@@ -568,7 +569,102 @@
 /* Wifi
  * ----
  */
-.wifi-widget .icon {
-  font-size: 12px;
-  color: var(--text);
+.wifi-menu {
+    min-height: 375px;
+    max-height: 350px;
+    min-width: 375px;
+    font-size: 14px;
+    background-color: var(--base);
+}
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--flashing);
+}
+.wifi-menu .header {
+    margin-bottom: 2px;
+    padding: 12px;
+    font-weight: 600;
+    color: white;
+    border-bottom: 1px solid var(--base);
+    background-color: var(--base);
+}
+.wifi-menu .error-message {
+    margin-bottom: 2px;
+    padding: 12px;
+    font-weight: 600;
+    color: white;
+    border-bottom: 1px solid var(--base);
+    background-color: var(--flashing);
+}
+.wifi-menu .wifi-list {
+    margin-right: 3px;
+    background-color: var(--gray);
+}
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    margin: 2px 4px;
+    padding: 2px 12px;
+}
+.wifi-menu .wifi-item:hover {
+    background-color: var(--overlay2);
+}
+.wifi-menu .wifi-item[active=true] {
+    min-height: 80px;
+    background-color: var(--overlay2);
+}
+.wifi-menu .wifi-item .icon {
+    margin-right: 10px;
+}
+.wifi-menu .wifi-item .name {
+    margin-right: 10px;
+}
+.wifi-menu .wifi-item .password {
+    background-color: transparent;
+}
+.wifi-menu .wifi-item .status {}
+.wifi-menu .wifi-item .strength {}
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+.wifi-menu .wifi-item .connect {
+    padding: 4px 30px;
+    font-size: 14px;
+    border: none;
+    background-color: var(--overlay2);
+}
+.wifi-menu .wifi-item .connect:hover {
+    background-color: var(--overlay1);
+}
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: var(--overlay1);
+}
+.wifi-menu .footer {
+    margin-top: 2px;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-top: 1px solid var(--base);
+    background-color: var(--base);
+}
+.wifi-menu .footer .settings-button {
+    min-width: 26px;
+    min-height: 26px;
+    padding: 0 2px;
+    border: none;
+    background-color: transparent;
+}
+.wifi-menu .footer .settings-button:hover {
+    background-color: var(--overlay2);
+}
+.wifi-menu .footer .refresh-icon {
+    min-width: 26px;
+    min-height: 26px;
+    font-family: 'Segoe Fluent Icons';
+    border: none;
+    background-color: transparent;
+}
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: var(--overlay2);
 }
