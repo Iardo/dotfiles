@@ -33,7 +33,7 @@ bars:
     widgets:
       left: ["home", "glazewm_workspaces", "komorebi_workspaces", "apps", "taskbar", "active_window"]
       center: []
-      right: ["disk", "volume", "clock", "battery", "language", "bluetooth", "wifi", "systray", "notifications", "power_menu"]
+      right: ["disk", "volume", "clock", "battery", "language", "bluetooth", "systray", "notifications", "power_menu"]
 widgets:
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
