@@ -1,3 +1,7 @@
+-- Project
+-------------------
+-- 
+
 return {
   "coffebar/neovim-project",
   lazy = false,
@@ -8,9 +12,7 @@ return {
   end,
   dependencies = {
     { "nvim-lua/plenary.nvim" },
-    -- optional picker
     { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
-    -- optional picker
     { "ibhagwan/fzf-lua" },
     { "Shatur/neovim-session-manager" },
   },
@@ -18,10 +20,8 @@ return {
     { '<c-p>', ':NeovimProjectDiscover<CR>', desc = 'Project Select', silent = true },
   },
   opts = {
-    projects = { -- define project roots
+    projects = {
       "~/.config/*",
-      "~/Downloads/gitclone/*",
-      "~/Downloads/projects/*",
       "~/projects/*",
     },
     last_session_on_startup = true,
