@@ -20,3 +20,4 @@ session.lua
 # include these folders:
 # include these files:
 !.gitkeep
+!nvim/lua/themes/hsluv.lua
