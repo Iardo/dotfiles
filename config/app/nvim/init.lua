@@ -1,3 +1,7 @@
+-- Globals
+-------------------------
+hsluv = require("themes.hsluv")
+
 -- Configs
 -------------------------
 require('themes.uaihu').set_options()
