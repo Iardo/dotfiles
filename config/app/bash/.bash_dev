@@ -7,6 +7,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # ---------------------------------------------------------------------------- #
 # INCLUDES
-if [ -e ~/.bash_nvm ]; then source ~/.bash_nvm; fi
+#if [ -e ~/.bash_nvm ]; then source ~/.bash_nvm; fi
 if [ -e ~/.deno/env ]; then source ~/.deno/env; fi
 if [ -e ~/.sdkman/bin/sdkman-init.sh ]; then source ~/.sdkman/bin/sdkman-init.sh; fi

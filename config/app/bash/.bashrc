@@ -37,6 +37,6 @@ fi
 # INCLUDES
 if [ -e ~/.bash_alias ]; then source ~/.bash_alias; fi
 if [ -e ~/.bash_cfg ];   then source ~/.bash_cfg; fi
-if [ -e ~/.bash_dev ];   then source ~/.bash_dev; fi
+#if [ -e ~/.bash_dev ];   then source ~/.bash_dev; fi
 if [ -e ~/.bash_opt ];   then source ~/.bash_opt; fi
 if [ -e ~/.bash_out ];   then source ~/.bash_out; fi
