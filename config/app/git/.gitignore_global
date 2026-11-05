@@ -1,50 +1,37 @@
-
-# Created by Ivan Ramos
-# See at https://github.com/Iardo/dotfiles
-
-
-# General
-/.AppleDouble
-/.DS_Store
-/.LSOverride
-
-# Icon must end with two \r
-Icon
-
-# Thumbnails
-._*
-
-# Ignore all local history of files
-.history
-
-# Files that might appear in the root of a volume
-/.com.apple.timemachine.donotpresent
-/.DocumentRevisions-V100
-/.fseventsd
-/.Spotlight-V100
-/.TemporaryItems
-/.Trashes
-/.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
+# include folders:
+# ignored folders:
 /.apdisk
 /.AppleDB
 /.AppleDesktop
+/.Idea/*
+/.vs
+/.vscode/*
 /Network Trash Folder
 /Temporary Items
 
-# Editor / IDEs configurations
-.vscode/*
+
+# --------------------
+# include files:
+!.gitkeep
+!.vscode/extensions.json
+!.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
-/.Idea/*
-
-# Development
+# ignored files:
+._*
+.AppleDouble
+.com.apple.timemachine.donotpresent
 .development.*
+.DocumentRevisions-V100
+.ds_store
 .env
+.fseventsd
+.history
 .local.*
-
-# End of https://github.com/Iardo/dotfiles
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.uuid
+.VolumeIcon.icns
